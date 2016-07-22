@@ -22,6 +22,7 @@ struct AtomInfo {
   }
 }
 
+
 AtomInfo[] ATOMS_INFO = {
   AtomInfo("H", 0.53, "#ffffff"),
   AtomInfo("He", 0.31, "#ffc0cb"),

@@ -3,6 +3,9 @@ import three;
 include db;
 
 
+real distance ( triple a, triple b ){
+  return sqrt( (a.x-b.x)^2 + (a.y-b.y)^2 + (a.z-b.z)^2 );
+};
 struct Atom {
   triple position;
   real radius;
@@ -25,21 +28,18 @@ struct Atom {
 };
 
 
-//currentprojection = perspective(-1,0,0);
-//int separation = 8;
-//int columns = 10,row=-1;
-//int atomsNumber = ATOMS_INFO.length;
-////int atomsNumber = 20;
-//for ( int i = 0; i < atomsNumber; i+=1 ) {
-  //if (i%columns == 0) ++row;
-  //string element = ATOMS_INFO[i].element;
-  //if (element == "He") i=columns - 1;
-  //triple pos = (separation*(i%columns),0,-separation*row);
-  //Atom atom = Atom(element, pos);
-  //atom.draw();
-  //label(scale(0.2)*atom.element, atom.position+(0,0,separation/2));
-  //label(scale(0.2)*hex(atom.color), atom.position+(0,0,1));
-//}
-////draw(L=Label("$x$", position=Relative(0.8), align=N), O--X*10, blue, Arrow3);
-////draw(O--Y*10,green,Arrow3);
-////draw(O--Z*10,red,Arrow3);
+struct Bond {
+  Atom a1,a2;
+  void operator init(Atom atom_1, Atom atom_2){
+    this.a1 = atom_1;
+    this.a2 = atom_2;
+  };
+  void draw (real max_dist = 100000 , real min_dist = 0){
+    real dist = distance( a1.position, a2.position);
+    if ( min_dist <= dist  && dist <= max_dist ) {
+      triple midway = (a1.position - a2.position)/2 + a2.position;
+      draw(midway -- a2.position, a2.color);
+      draw(midway -- a1.position, a1.color);
+    }
+  };
+}
