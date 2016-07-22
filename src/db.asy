@@ -6,7 +6,7 @@ pen getPenFromHex ( string color ){
   r = R/255;
   g = G/255;
   b = B/255;
-  write(r,g,b);
+  //write(r,g,b);
   return rgb(r,g,b);
 };
 
