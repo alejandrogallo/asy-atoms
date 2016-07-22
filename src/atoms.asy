@@ -22,8 +22,8 @@ struct Atom {
       }
     }
   };
-  void draw (bool draw_label = false){
-    draw(shift(position)*scale3(radius)*unitsphere, color);
+  void draw (bool draw_label = false, real radius_scale=1.0){
+    draw(shift(position)*scale3(radius_scale*radius)*unitsphere, color);
     if ( draw_label ) {
       //TODO DRAW LABELS
       //label("pepepe",position+radius*(2,0,0));
