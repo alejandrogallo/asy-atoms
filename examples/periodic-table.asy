@@ -1,7 +1,7 @@
 import tree;
 import atoms;
 
-currentprojection = perspective(-1,0,0);
+currentprojection = perspective(0,1000,0);
 int separation = 8;
 int columns = 10,row=-1;
 int atomsNumber = ATOMS_INFO.length;
