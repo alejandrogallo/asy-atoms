@@ -20,7 +20,7 @@ TODO
 
 ## Quick start ##
 
-```c h2.asy
+```c
 import atoms;
 unitsize(1cm);
 currentprojection = perspective(1,1,1);
