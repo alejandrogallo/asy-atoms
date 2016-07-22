@@ -51,6 +51,11 @@ And now you could do
 ![H2](examples/h2.png)
 
 
+## Whish list ##
+
+  * Well rendered labels for the atoms.
+  * Volumetric data.
+
 ## Example ##
 
 ![SiV defect in diamond](examples/siv.png)
