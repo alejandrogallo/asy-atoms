@@ -22,8 +22,14 @@ struct Atom {
       }
     }
   };
-  void draw (){
+  void draw (bool draw_label = false){
     draw(shift(position)*scale3(radius)*unitsphere, color);
+    if ( draw_label ) {
+      //TODO DRAW LABELS
+      //label("pepepe",position+radius*(2,0,0));
+    }
+    //label(scale3(2)*"pepepe",position+(10,0,0));
+    //draw(L=Label("$x$", position=Relative(0.8), align=N), position, blue, Arrow3);
   };
 };
 

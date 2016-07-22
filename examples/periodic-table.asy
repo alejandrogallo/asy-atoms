@@ -12,7 +12,7 @@ for ( int i = 0; i < 80; i+=1 ) {
   if (element == "He") i=columns - 1;
   triple pos = (separation*(i%columns),0,-separation*row);
   Atom atom = Atom(element, pos);
-  atom.draw();
+  atom.draw(true);
   //label(scale(0.2)*atom.element, atom.position+(0,0,separation/2));
   //label(scale(0.2)*hex(atom.color), atom.position+(0,0,1));
   write(i);
