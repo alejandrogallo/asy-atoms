@@ -1,4 +1,6 @@
 import three;
+//import solids;
+//import tube;
 
 include db;
 
@@ -40,12 +42,19 @@ struct Bond {
     this.a1 = atom_1;
     this.a2 = atom_2;
   };
-  void draw (real max_dist = 100000 , real min_dist = 0){
+  void draw (real max_dist = 100000 , real min_dist = 0, real radius=.15){
     real dist = distance( a1.position, a2.position);
+    triple direction = a1.position - a2.position;
+    real height;
+    triple midway;
+    //write(dist);
     if ( min_dist <= dist  && dist <= max_dist ) {
-      triple midway = (a1.position - a2.position)/2 + a2.position;
-      draw(midway -- a2.position, a2.color);
-      draw(midway -- a1.position, a1.color);
+      midway = direction/2 + a2.position;
+      height = distance( a1.position, midway);
+      //draw(cylinder(a2.position,r=radius,h=height,direction), a2.color+linewidth(radius));
+      //draw(cylinder(a1.position,r=radius,h=height,-direction), a1.color+linewidth(radius));
+      draw(midway -- a2.position, a2.color+linewidth(radius),currentlight);
+      draw(midway -- a1.position, a1.color+linewidth(radius),currentlight);
     }
   };
 }
