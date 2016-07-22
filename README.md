@@ -8,4 +8,4 @@ molecular structures in using the Asymptote program.
 
 ## Example ##
 
-![SiV defect in diamond](examples/siv.pdf)
+![SiV defect in diamond](examples/siv.png)
