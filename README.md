@@ -52,7 +52,7 @@ And now you could do
 <code>asy h2.asy</code> or if you want interactive
 <code>asy -batchView h2.asy</code>
 
-![H2](examples/h2.png)
+![H2](images/h2.png)
 
 
 ## Whish list ##
@@ -62,4 +62,4 @@ And now you could do
 
 ## Example ##
 
-![SiV defect in diamond](examples/siv.png)
+![SiV defect in diamond](images/siv.png)
