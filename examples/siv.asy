@@ -1,9 +1,9 @@
 import atoms;
 unitsize(1cm);
 //currentprojection  = perspective(1,1,1);
-settings.prc       = false;
-settings.render    = 10; //quality
-settings.outformat = "png"; //output 
+//settings.prc       = false;
+//settings.render    = 10; //quality
+//settings.outformat = "png"; //output 
 real bond_radius = 3.0;
 real radius_scale = 0.2;
 

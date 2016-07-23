@@ -1,6 +1,4 @@
 import three;
-//import solids;
-//import tube;
 
 include db;
 
@@ -35,6 +33,16 @@ struct Atom {
   };
 };
 
+struct VolumetricData {
+  // data must be an array of [value, position] values
+  real[][] data;
+  void operator init(real[][] data){
+    this.data = data;
+  };
+  void draw (real isovalue=1){
+    write("hwllo");
+  };
+};
 
 struct Bond {
   Atom a1,a2;
@@ -47,7 +55,6 @@ struct Bond {
     triple direction = a1.position - a2.position;
     real height;
     triple midway;
-    //write(dist);
     if ( min_dist <= dist  && dist <= max_dist ) {
       midway = direction/2 + a2.position;
       height = distance( a1.position, midway);

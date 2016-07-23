@@ -1,1 +1,1 @@
-../src/atoms.asy
+../dist/atoms.asy
