@@ -15,7 +15,6 @@ for ( int i = 0; i < 80; i+=1 ) {
   atom.draw(true);
   //label(scale(0.2)*atom.element, atom.position+(0,0,separation/2));
   //label(scale(0.2)*hex(atom.color), atom.position+(0,0,1));
-  write(i);
 }
 
 //draw(L=Label("$x$", position=Relative(0.8), align=N), O--X*10, blue, Arrow3);
