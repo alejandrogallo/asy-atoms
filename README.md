@@ -9,6 +9,8 @@ molecular structures in using the Asymptote program.
 ## Installation ##
 
 Take the files in the <code>src</code> director and copy them in
+your project directory or if you want to install it system-wide
+just copy the files into
 
 ### Linux ###
 <code>/usr/share/asymptote/</code>
@@ -16,6 +18,8 @@ Take the files in the <code>src</code> director and copy them in
 ### Windows ###
 
 TODO
+
+
 
 
 ## Quick start ##
