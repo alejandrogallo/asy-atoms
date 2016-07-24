@@ -1,7 +1,10 @@
 import tree;
 import atoms;
 
+//unitsize(1cm);
 currentprojection = perspective(0,1000,0);
+settings.prc       = true;
+settings.render    = 20; //quality
 int separation = 8;
 int columns = 10,row=-1;
 int atomsNumber = ATOMS_INFO.length;
@@ -13,8 +16,8 @@ for ( int i = 0; i < 80; i+=1 ) {
   triple pos = (separation*(i%columns),0,-separation*row);
   Atom atom = Atom(element, pos);
   atom.draw(true);
-  //label(scale(0.2)*atom.element, atom.position+(0,0,separation/2));
-  //label(scale(0.2)*hex(atom.color), atom.position+(0,0,1));
+  label(scale(0.2)*atom.element, atom.position , N);
+  //label(scale(0.2)*hex(atom.color), atom.position,W);
 }
 
 //draw(L=Label("$x$", position=Relative(0.8), align=N), O--X*10, blue, Arrow3);
