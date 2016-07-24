@@ -62,4 +62,5 @@ And now you could do
 
 ## Example ##
 
+![Periodic table](images/periodic-table.png)
 ![SiV defect in diamond](images/siv.png)
