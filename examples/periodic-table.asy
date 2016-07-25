@@ -16,7 +16,7 @@ for ( int i = 0; i < 80; i+=1 ) {
   triple pos = (separation*(i%columns),0,-separation*row);
   Atom atom = Atom(element, pos);
   atom.draw(true);
-  label(scale(0.2)*atom.element, atom.position , N);
+  //label(scale(0.2)*atom.element, atom.position , N);
   //label(scale(0.2)*hex(atom.color), atom.position,W);
 }
 
