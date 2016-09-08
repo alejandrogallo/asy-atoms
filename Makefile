@@ -18,3 +18,7 @@ test:
 
 doc:
 	doxygen Doxyfile
+
+update-website:
+	git push origin `git subtree split --prefix doc/html/ master`:gh-pages --force
+
