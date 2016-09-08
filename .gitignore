@@ -1,7 +1,5 @@
 dist
-*.pdf
 *.eps
-*.png
 *.swp
 examples/CHG
 examples/CHGCAR
