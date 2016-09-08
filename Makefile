@@ -24,4 +24,9 @@ update-website: doc
 	git checkout gh-pages
 	mv doc/html/* .
 	rm -rf doc/
+	git add .
+	git commit -m "Automatic update"
+	git push origin gh-pages
+	git checkout master
+	
 
