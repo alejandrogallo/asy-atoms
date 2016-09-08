@@ -22,8 +22,7 @@ doc:
 update-website: doc
 	#git push origin `git subtree split --prefix doc/html/ master`:gh-pages --force
 	git checkout gh-pages
-	#rm -rf *
-	rsync doc/html/ .
+	mv -f doc/html/* .
 	rm -rf doc/
 	git add .
 	git commit -m "Automatic update"
