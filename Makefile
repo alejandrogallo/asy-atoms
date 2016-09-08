@@ -10,4 +10,5 @@ dist:
 clean:
 	-rm -rf $(DIST_FOLDER)
 
-
+test:
+	make -C tests
