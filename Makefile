@@ -11,7 +11,7 @@ dist:
 	bash ./tools/mkdist.sh
 
 clean:
-	-rm -rf $(DIST_FOLDER)
+	-rm -rf doc
 
 test:
 	bash tools/test.sh
