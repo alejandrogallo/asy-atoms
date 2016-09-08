@@ -8,6 +8,10 @@ function warning()  { echo -e " \033[0;93m==>\033[0m  $@"; }
 
 TESTS_DIR=tests
 
-for test in tests/test_*; do
-  asy $$test && echo "Success" || echo "Failed";
+cd ${TESTS_DIR}
+
+for test in test_*; do
+  header TEST: ${test}
+  echo
+  asy $test && success "Success" || error "Failed";
 done

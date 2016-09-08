@@ -122,10 +122,27 @@ AtomInfo[] ATOMS_INFO = {
 };
 
 
+struct Basis {
+  triple a;
+  triple b;
+  triple c;
+  void operator init(triple a, triple b, triple c){
+    this.a = a;
+    this.b = b;
+    this.c = c;
+  };
+  triple getCartesian(triple coordinates){
+    return coordinates.x*a + coordinates.y*b + coordinates.z*c;
+  };
+}
+
+// Global definition of the canonical cartesian basis
+Basis CARTESIAN = Basis((1,0,0), (0,1,0), (0,0,1));
 
 real distance ( triple a, triple b ){
   return sqrt( (a.x-b.x)^2 + (a.y-b.y)^2 + (a.z-b.z)^2 );
 };
+
 struct Atom {
   triple position;
   real radius;

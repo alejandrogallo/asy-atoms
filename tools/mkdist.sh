@@ -30,8 +30,8 @@ EOF
 
 done
 
-arrow "Sed program"
-cat ${SED_TEMP_FILE}
+#arrow "Sed program"
+#cat ${SED_TEMP_FILE}
 
 sed -f ${SED_TEMP_FILE} ${MAIN_FILE} > ${DIST_FILE}
 
