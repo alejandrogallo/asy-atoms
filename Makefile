@@ -4,6 +4,9 @@ SRC_FOLDER = src
 MAIN_FILE = $(SRC_FOLDER)/atoms.asy
 
 .PHONY: dist
+
+all: dist test
+
 dist:
 	bash ./tools/mkdist.sh
 
@@ -11,4 +14,4 @@ clean:
 	-rm -rf $(DIST_FOLDER)
 
 test:
-	make -C tests
+	bash tools/test.sh
