@@ -2,6 +2,12 @@ import three;
 
 include db;
 
+/**
+ * \struct Basis
+ * \brief Basis object
+ *
+ */
+
 struct Basis {
   triple a;
   triple b;
