@@ -15,3 +15,6 @@ clean:
 
 test:
 	bash tools/test.sh
+
+doc:
+	doxygen Doxyfile
