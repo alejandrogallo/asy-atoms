@@ -3,3 +3,7 @@ dist
 *.eps
 *.png
 doc/*
+*.swp
+examples/CHG
+examples/CHGCAR
+examples/chgcar.text
