@@ -20,5 +20,8 @@ doc:
 	doxygen Doxyfile
 
 update-website: doc
-	git push origin `git subtree split --prefix doc/html/ master`:gh-pages --force
+	#git push origin `git subtree split --prefix doc/html/ master`:gh-pages --force
+	git checkout gh-pages
+	mv doc/html/* .
+	rm -rf doc/
 
