@@ -655,6 +655,7 @@ struct Atom {
   Label    label;
   pen      color;
   Basis    basis;
+  AtomInfo info;
   void setBasis ( Basis b ){ basis = b; };
   triple getCartesian(){
     return basis.getCartesian(coordinates);
@@ -670,6 +671,7 @@ struct Atom {
     this.basis       = basis;
     for ( AtomInfo info : ATOMS_INFO ) {
       if ( info.element == element ) {
+        this.info        = info;
         this.element     = info.element;
         this.color       = info.color;
         this.radius      = info.atomic_radius;
