@@ -1,4 +1,5 @@
 import three;
+import version;
 
 include db;
 
@@ -51,9 +52,10 @@ struct Atom {
   triple   coordinates;
   real     radius;
   string   element;
-  string   label;
+  Label    label;
   pen      color;
   Basis    basis;
+  AtomInfo info;
   void setBasis ( Basis b ){ basis = b; };
   triple getCartesian(){
     return basis.getCartesian(coordinates);
@@ -69,14 +71,19 @@ struct Atom {
     this.basis       = basis;
     for ( AtomInfo info : ATOMS_INFO ) {
       if ( info.element == element ) {
+        this.info        = info;
         this.element     = info.element;
         this.color       = info.color;
         this.radius      = info.atomic_radius;
       }
     }
+    this.label = Label(element) ;
   };
   /**
-   * \brief
+   * \brief Draw the atom
+   *
+   * Old versions of asymptote are not able to print labels.
+   *
    * @param draw_label    Wheter or not to draw the label
    * @param radius_scale  Scaling factor for the radius
    * @param l             Light to be used in the scene for the Atom
@@ -84,8 +91,9 @@ struct Atom {
   void draw (bool draw_label = false, real radius_scale=1.0, light l = currentlight){
     draw(shift(getCartesian())*scale3(radius_scale*radius)*unitsphere, color, l);
     if ( draw_label ) {
-      //TODO DRAW LABELS
-      /*label("pepepe",getCartesian()+radius*(2,0,0));*/
+      if ( (real) VERSION >= 2.21 ) {
+        draw(label, getCartesian()+radius*(1,0,0));
+      }
     }
   };
 };
@@ -97,7 +105,7 @@ struct VolumetricData {
     this.data = data;
   };
   void draw (real isovalue=1){
-    write("hwllo");
+     // TODO
   };
 };
 

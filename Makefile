@@ -3,23 +3,26 @@ SRC_FOLDER = src
 
 MAIN_FILE = $(SRC_FOLDER)/atoms.asy
 
-.PHONY: dist doc update-website
+.PHONY: dist doc update-website examples
 
 all: dist test
 
-dist:
+dist: ## Create distribution
 	bash ./tools/mkdist.sh
 
 clean:
 	-rm -rf doc
 
-test:
+test: ## Run the tests
 	bash tools/test.sh
 
 doc:
 	doxygen Doxyfile
 
-update-website: doc
+examples:
+	make -C examples
+
+update-website: doc ## Update documentation
 	#git push origin `git subtree split --prefix doc/html/ master`:gh-pages --force
 	git checkout gh-pages
 	for i in *; do echo $$i; [ $$i = doc ] || rm -rf $$i; done
@@ -30,4 +33,7 @@ update-website: doc
 	git push origin gh-pages
 	git checkout master
 	
+
+help: ## Prints help for targets with comments
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
