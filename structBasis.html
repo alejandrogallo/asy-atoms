@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -61,6 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -68,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -88,39 +90,120 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="structBasis.html" title="Basis object. ">Basis</a> object.  
+<p>Vector basis object.  
  <a href="structBasis.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acf3db108dcecab44102a4c54556ac907"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf3db108dcecab44102a4c54556ac907"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>operator init</b> (triple a, triple b, triple c)</td></tr>
+<tr class="memitem:acf3db108dcecab44102a4c54556ac907"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBasis.html#acf3db108dcecab44102a4c54556ac907">operator init</a> (triple <a class="el" href="structBasis.html#aa1859f20d91a29f29752197c97144102">a</a>, triple <a class="el" href="structBasis.html#aa336343187b6cf4745a78b1dc2992e32">b</a>, triple <a class="el" href="structBasis.html#a190e40eadc3a8c8cefd18bdd28c229c0">c</a>)</td></tr>
 <tr class="separator:acf3db108dcecab44102a4c54556ac907"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36f15c6bc34d20bf009e43ed42337956"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a36f15c6bc34d20bf009e43ed42337956"></a>
-triple&#160;</td><td class="memItemRight" valign="bottom"><b>getCartesian</b> (triple coordinates)</td></tr>
+<tr class="memitem:a36f15c6bc34d20bf009e43ed42337956"><td class="memItemLeft" align="right" valign="top">triple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBasis.html#a36f15c6bc34d20bf009e43ed42337956">getCartesian</a> (triple coordinates)</td></tr>
 <tr class="separator:a36f15c6bc34d20bf009e43ed42337956"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:aa1859f20d91a29f29752197c97144102"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa1859f20d91a29f29752197c97144102"></a>
-triple&#160;</td><td class="memItemRight" valign="bottom"><b>a</b></td></tr>
+triple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBasis.html#aa1859f20d91a29f29752197c97144102">a</a></td></tr>
+<tr class="memdesc:aa1859f20d91a29f29752197c97144102"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector 1. <br /></td></tr>
 <tr class="separator:aa1859f20d91a29f29752197c97144102"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa336343187b6cf4745a78b1dc2992e32"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa336343187b6cf4745a78b1dc2992e32"></a>
-triple&#160;</td><td class="memItemRight" valign="bottom"><b>b</b></td></tr>
+triple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBasis.html#aa336343187b6cf4745a78b1dc2992e32">b</a></td></tr>
+<tr class="memdesc:aa336343187b6cf4745a78b1dc2992e32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector 2. <br /></td></tr>
 <tr class="separator:aa336343187b6cf4745a78b1dc2992e32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a190e40eadc3a8c8cefd18bdd28c229c0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a190e40eadc3a8c8cefd18bdd28c229c0"></a>
-triple&#160;</td><td class="memItemRight" valign="bottom"><b>c</b></td></tr>
+triple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBasis.html#a190e40eadc3a8c8cefd18bdd28c229c0">c</a></td></tr>
+<tr class="memdesc:a190e40eadc3a8c8cefd18bdd28c229c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector 3. <br /></td></tr>
 <tr class="separator:a190e40eadc3a8c8cefd18bdd28c229c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="structBasis.html" title="Basis object. ">Basis</a> object. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<div class="textblock"><p>Vector basis object. </p>
+<p>This structure is used to define a <a class="el" href="structBasis.html" title="Vector basis object. ">Basis</a> from 3 vectors. These vectors needn't be orthogonal. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a36f15c6bc34d20bf009e43ed42337956"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">triple Basis::getCartesian </td>
+          <td>(</td>
+          <td class="paramtype">triple&#160;</td>
+          <td class="paramname"><em>coordinates</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Get usual cartesian coordinates from a vector. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">coordinates</td><td>Generic vector expressed in the coordinates of the basis. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="acf3db108dcecab44102a4c54556ac907"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Basis::operator init </td>
+          <td>(</td>
+          <td class="paramtype">triple&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">triple&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">triple&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Constructor of the <a class="el" href="structBasis.html" title="Vector basis object. ">Basis</a> structure. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>The first vector </td></tr>
+    <tr><td class="paramname">b</td><td>The second vector </td></tr>
+    <tr><td class="paramname">c</td><td>The third vector </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/atoms.asy</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 9 2016 01:51:46 for Asy-Atoms by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Sep 9 2016 02:20:01 for Asy-Atoms by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
