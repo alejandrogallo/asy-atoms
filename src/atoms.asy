@@ -42,6 +42,11 @@ real distance ( triple a, triple b ){
   return sqrt( (a.x-b.x)^2 + (a.y-b.y)^2 + (a.z-b.z)^2 );
 };
 
+/**
+ * \struct Main atom structure
+ * \brief Structure with the atomic information needed to render an atom.
+ */
+
 struct Atom {
   triple   coordinates;
   real     radius;
@@ -53,6 +58,12 @@ struct Atom {
   triple getCartesian(){
     return basis.getCartesian(coordinates);
   };
+  /**
+   * \brief Constructor of the Basis structure.
+   * @param element    Symbol for the Atom (e.g. C, N .. )
+   * @param coordinate Coordinate in respect to the basis "basis"
+   * @param basis      Basis for the coordinates of the atom
+   */
   void operator init(string element, triple coordinates, Basis basis=CARTESIAN){
     this.coordinates = coordinates;
     this.basis       = basis;
@@ -64,14 +75,18 @@ struct Atom {
       }
     }
   };
-  void draw (bool draw_label = false, real radius_scale=1.0){
-    draw(shift(getCartesian())*scale3(radius_scale*radius)*unitsphere, color);
+  /**
+   * \brief
+   * @param draw_label    Wheter or not to draw the label
+   * @param radius_scale  Scaling factor for the radius
+   * @param l             Light to be used in the scene for the Atom
+   */
+  void draw (bool draw_label = false, real radius_scale=1.0, light l = currentlight){
+    draw(shift(getCartesian())*scale3(radius_scale*radius)*unitsphere, l, color);
     if ( draw_label ) {
       //TODO DRAW LABELS
-      //label("pepepe",getCartesian()+radius*(2,0,0));
+      /*label("pepepe",getCartesian()+radius*(2,0,0));*/
     }
-    //label(scale3(2)*"pepepe",getCartesian()+(10,0,0));
-    //draw(L=Label("$x$", coordinates=Relative(0.8), align=N), getCartesian(), blue, Arrow3);
   };
 };
 
@@ -86,6 +101,10 @@ struct VolumetricData {
   };
 };
 
+/**
+ * \struct General simple bond
+ * \brief Structure with the bond information needed to render an atomic bond
+ */
 struct Bond {
   Atom a1,a2;
   void operator init(Atom atom_1, Atom atom_2){
@@ -100,8 +119,6 @@ struct Bond {
     if ( min_dist <= dist  && dist <= max_dist ) {
       midway = direction/2 + a2.getCartesian();
       height = distance( a1.getCartesian(), midway);
-      //draw(cylinder(a2.getCartesian(),r=radius,h=height,direction), a2.color+linewidth(radius));
-      //draw(cylinder(a1.getCartesian(),r=radius,h=height,-direction), a1.color+linewidth(radius));
       draw(midway -- a2.getCartesian(), a2.color+linewidth(radius),currentlight);
       draw(midway -- a1.getCartesian(), a1.color+linewidth(radius),currentlight);
     }
