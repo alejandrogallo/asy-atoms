@@ -6,14 +6,26 @@ pen getPenFromHex ( string color ){
   r = R/255;
   g = G/255;
   b = B/255;
-  //write(r,g,b);
   return rgb(r,g,b);
 };
 
+/**
+\brief Structure for storing atomic information.
+
+This structure should be used to store all relevant information related to an
+atomic symbol.
+*/
+
 struct AtomInfo {
-  string element;
-  real atomic_radius;
-  pen color;
+  string element; ///< Atomic symbol of the element
+  real   atomic_radius; ///< Atomic radius of the element
+  pen    color; ///< Style of the atom (color, etc...)
+  /**
+  \brief Constructor for AtomInfo
+  @param element        Atomic symbol, C, N, etc...
+  @param atomic_radius  Atomic radius of the Element in Angstrom
+  @param color          Color in html notation (e.g. #ffffff)
+  */
   void operator init(string element, real atomic_radius, string color){
     real main_color = atomic_radius/3;
     this.color         = getPenFromHex(color);
