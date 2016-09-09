@@ -1,3 +1,4 @@
+/// \mainpage
 # ASY-ATOMS #
 
 
@@ -24,7 +25,7 @@ TODO
 
 ## Quick start ##
 
-```c
+~~~c
 import atoms;
 unitsize(1cm);
 currentprojection = perspective(1,1,1);
@@ -45,7 +46,7 @@ h_1.draw(true);
 h_2.draw(true);
 
 Bond(h_1,h_2).draw(radius=bond_radius);
-```
+~~~
 
 And now you could do
 
