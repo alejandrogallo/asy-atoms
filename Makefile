@@ -24,6 +24,7 @@ update-website: doc
 	git checkout gh-pages
 	for i in *; do echo $$i; [ $$i = doc ] || rm -rf $$i; done
 	mv doc/html/* .
+	rm -rf doc/
 	git add .
 	git commit -m "Automatic update"
 	git push origin gh-pages
