@@ -82,7 +82,7 @@ struct Atom {
    * @param l             Light to be used in the scene for the Atom
    */
   void draw (bool draw_label = false, real radius_scale=1.0, light l = currentlight){
-    draw(shift(getCartesian())*scale3(radius_scale*radius)*unitsphere, l, color);
+    draw(shift(getCartesian())*scale3(radius_scale*radius)*unitsphere, color, l);
     if ( draw_label ) {
       //TODO DRAW LABELS
       /*label("pepepe",getCartesian()+radius*(2,0,0));*/
@@ -111,7 +111,7 @@ struct Bond {
     this.a1 = atom_1;
     this.a2 = atom_2;
   };
-  void draw (real max_dist = 100000 , real min_dist = 0, real radius=.15){
+  void draw (real max_dist = 100000 , real min_dist = 0, real radius=.15, light l = currentlight){
     real dist = distance( a1.getCartesian(), a2.getCartesian());
     triple direction = a1.getCartesian() - a2.getCartesian();
     real height;
@@ -119,8 +119,8 @@ struct Bond {
     if ( min_dist <= dist  && dist <= max_dist ) {
       midway = direction/2 + a2.getCartesian();
       height = distance( a1.getCartesian(), midway);
-      draw(midway -- a2.getCartesian(), a2.color+linewidth(radius),currentlight);
-      draw(midway -- a1.getCartesian(), a1.color+linewidth(radius),currentlight);
+      draw(midway -- a2.getCartesian(), a2.color+linewidth(radius),l);
+      draw(midway -- a1.getCartesian(), a1.color+linewidth(radius),l);
     }
   };
 }
