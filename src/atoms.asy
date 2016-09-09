@@ -3,26 +3,39 @@ import three;
 include db;
 
 /**
- * \struct Basis
- * \brief Basis object
- *
+\struct Basis
+\brief Vector basis object
+
+This structure is used to define a Basis from 3 vectors. These
+vectors needn't be orthogonal.
+
  */
 
 struct Basis {
-  triple a;
-  triple b;
-  triple c;
+  triple a; ///< Vector 1
+  triple b; ///< Vector 2
+  triple c; ///< Vector 3
+  /**
+   * Constructor of the Basis structure.
+   * @param a The first vector
+   * @param b The second vector
+   * @param c The third vector
+   */
   void operator init(triple a, triple b, triple c){
     this.a = a;
     this.b = b;
     this.c = c;
   };
+  /**
+   * Get usual cartesian coordinates from a vector.
+   * @param coordinates Generic vector expressed
+   *    in the coordinates of the basis.
+   */
   triple getCartesian(triple coordinates){
     return coordinates.x*a + coordinates.y*b + coordinates.z*c;
   };
 }
 
-// Global definition of the canonical cartesian basis
 Basis CARTESIAN = Basis((1,0,0), (0,1,0), (0,0,1));
 
 real distance ( triple a, triple b ){

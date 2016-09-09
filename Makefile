@@ -3,7 +3,7 @@ SRC_FOLDER = src
 
 MAIN_FILE = $(SRC_FOLDER)/atoms.asy
 
-.PHONY: dist
+.PHONY: dist doc update-website
 
 all: dist test
 
