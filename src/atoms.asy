@@ -65,7 +65,7 @@ real distance ( triple a, triple b ){
 };
 
 /**
- * \struct Main atom structure
+ * \struct Atom
  * \brief Structure with the atomic information needed to render an atom.
  */
 
@@ -154,7 +154,7 @@ struct Voxel {
 };
 
 /**
- * \struct Volumetric data
+ * \struct VolumetricData
  * \brief General structure to store and draw volumetric data
  */
 struct VolumetricData {
@@ -186,7 +186,7 @@ struct VolumetricData {
 };
 
 /**
- * \struct General simple bond
+ * \struct Bond
  * \brief Structure with the bond information needed to render an atomic bond
  */
 struct Bond {
