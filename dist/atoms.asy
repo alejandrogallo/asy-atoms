@@ -616,6 +616,10 @@ struct Basis {
   triple a; ///< Vector 1
   triple b; ///< Vector 2
   triple c; ///< Vector 3
+  Label a_label = Label("a",1); ///< Label for vector a
+  Label b_label = Label("b",1); ///< Label for vector b
+  Label c_label = Label("c",1); ///< Label for vector c
+  triple origin = (0,0,0); ///< Origin point for drawing
   /**
    * Constructor of the Basis structure.
    * @param a The first vector
@@ -634,6 +638,23 @@ struct Basis {
    */
   triple getCartesian(triple coordinates){
     return coordinates.x*a + coordinates.y*b + coordinates.z*c;
+  };
+  /**
+   * \brief Draw a "repere"
+   *
+   */
+  void draw(bool unit_vectors = false, bool draw_label = true){
+    triple a_end=a, b_end=b, c_end=c;
+    Label labelA="", labelB="", labelC="";
+    if (unit_vectors) {
+      a_end = dir(a); b_end = dir(b); c_end = dir(c);
+    }
+    if (draw_label) {
+      labelA = a_label; labelB = b_label; labelC = c_label;
+    }
+    draw(labelA,origin--shift(origin)*a_end, red, Arrow3);
+    draw(labelB,origin--shift(origin)*b_end, blue, Arrow3);
+    draw(labelC,origin--shift(origin)*c_end, green, Arrow3);
   };
 }
 
@@ -657,9 +678,7 @@ struct Atom {
   Basis    basis;
   AtomInfo info;
   void setBasis ( Basis b ){ basis = b; };
-  triple getCartesian(){
-    return basis.getCartesian(coordinates);
-  };
+  triple getCartesian(){ return basis.getCartesian(coordinates); };
   /**
    * \brief Constructor of the Basis structure.
    * @param element    Symbol for the Atom (e.g. C, N .. )
@@ -698,11 +717,68 @@ struct Atom {
   };
 };
 
+struct Voxel {
+  real value;
+  triple coordinates;
+  Basis basis;
+  real lx,ly,lz;
+  void setBasis ( Basis b ){ basis = b; };
+  void setCoordinates ( triple coords ){ coordinates = coords; };
+  triple getCartesian(){ return basis.getCartesian(coordinates); };
+  void draw(pen color) {
+    surface voxelSurface; 
+    voxelSurface = shift(getCartesian())*unitcube;
+  };
+  /**
+   * \brief Constructor of a voxel element
+   * @param element    Symbol for the Atom (e.g. C, N .. )
+   * @param coordinate Coordinate in respect to the basis "basis"
+   * @param basis      Basis for the coordinates of the atom
+   * @param l          Voxel length (if set, then it sets lx, ly and lz)
+   * @param lx         Voxel x length
+   * @param ly         Voyel y length
+   * @param lz         Vozel z length
+   */
+  void operator init(real value , triple coordinates, Basis basis=CARTESIAN,
+      real l=0, real lx=0, real ly=0, real lz=0){
+    if (l != 0) {
+      this.lx = l; this.ly = l; this.lz = l;
+    }
+    else {
+      this.lx = lx; this.ly = ly; this.lz = lz;
+    }
+    this.value       = value;
+    this.coordinates = coordinates;
+    this.basis       = basis;
+  };
+};
+
+/**
+ * \struct Volumetric data
+ * \brief General structure to store and draw volumetric data
+ */
 struct VolumetricData {
   // data must be an array of [value, coordinates] values
   real[][] data;
-  void operator init(real[][] data){
-    this.data = data;
+  int      nx;
+  int      ny;
+  int      nz;
+  Basis    basis;
+  /**
+   * \brief Constructor for Volumetric data
+   *
+   * @param data          Volumetric data in Cube file format
+   * @param basis         Base type structure for rendering correctly the voxels
+   * @param nx            How many points in x-direction
+   * @param ny            How many points in y-direction
+   * @param nz            How many points in z-direction
+   */
+  void operator init(real[][] data, int nx, int ny, int nz, Basis basis){
+    this.data  = data;
+    this.nx    = nx;
+    this.ny    = ny;
+    this.nz    = nz;
+    this.basis = basis;
   };
   void draw (real isovalue=1){
      // TODO

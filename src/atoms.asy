@@ -16,6 +16,9 @@ struct Basis {
   triple a; ///< Vector 1
   triple b; ///< Vector 2
   triple c; ///< Vector 3
+  Label a_label = Label("a",1); ///< Label for vector a
+  Label b_label = Label("b",1); ///< Label for vector b
+  Label c_label = Label("c",1); ///< Label for vector c
   triple origin = (0,0,0); ///< Origin point for drawing
   /**
    * Constructor of the Basis structure.
@@ -40,17 +43,18 @@ struct Basis {
    * \brief Draw a "repere"
    *
    */
-  void draw(bool unit_vectors = false){
-    triple a_end, b_end, c_end;
+  void draw(bool unit_vectors = false, bool draw_label = true){
+    triple a_end=a, b_end=b, c_end=c;
+    Label labelA="", labelB="", labelC="";
     if (unit_vectors) {
       a_end = dir(a); b_end = dir(b); c_end = dir(c);
     }
-    else {
-      a_end = a; b_end = b; c_end = c;
+    if (draw_label) {
+      labelA = a_label; labelB = b_label; labelC = c_label;
     }
-    draw(Label("a",1),origin--shift(origin)*a_end, red, Arrow3);
-    draw(Label("b",1),origin--shift(origin)*b_end, blue, Arrow3);
-    draw(Label("c",1),origin--shift(origin)*c_end, green, Arrow3);
+    draw(labelA,origin--shift(origin)*a_end, red, Arrow3);
+    draw(labelB,origin--shift(origin)*b_end, blue, Arrow3);
+    draw(labelC,origin--shift(origin)*c_end, green, Arrow3);
   };
 }
 
