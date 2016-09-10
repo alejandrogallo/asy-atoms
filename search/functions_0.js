@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getcartesian',['getCartesian',['../structBasis.html#a36f15c6bc34d20bf009e43ed42337956',1,'Basis']]]
+  ['draw',['draw',['../structBasis.html#a0f2bbaffbc42c2199a38f67eaa1b4f13',1,'Basis::draw()'],['../structAtom.html#a15328bc9ff05ff59cfc04884e5370ced',1,'Atom::draw()']]]
 ];

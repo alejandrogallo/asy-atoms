@@ -95,9 +95,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a18c047b52b7d58f5a1f6299abb8e271c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAtomInfo.html#a18c047b52b7d58f5a1f6299abb8e271c">operator init</a> (string <a class="el" href="structAtomInfo.html#a4242fbe779be6f217b1be622176326a3">element</a>, real <a class="el" href="structAtomInfo.html#a6cfe07e180bcab615c20080d53ded66a">atomic_radius</a>, string <a class="el" href="structAtomInfo.html#af67e03658b15091ffe7587a1d6edbb55">color</a>)</td></tr>
-<tr class="memdesc:a18c047b52b7d58f5a1f6299abb8e271c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="structAtomInfo.html" title="Structure for storing atomic information. ">AtomInfo</a>.  <a href="#a18c047b52b7d58f5a1f6299abb8e271c">More...</a><br /></td></tr>
-<tr class="separator:a18c047b52b7d58f5a1f6299abb8e271c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd0f32280c8981828662484c22eace39"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAtomInfo.html#afd0f32280c8981828662484c22eace39">operator init</a> (string <a class="el" href="structAtomInfo.html#a4242fbe779be6f217b1be622176326a3">element</a>, real <a class="el" href="structAtomInfo.html#a6cfe07e180bcab615c20080d53ded66a">atomic_radius</a>, string <a class="el" href="structAtomInfo.html#af67e03658b15091ffe7587a1d6edbb55">color</a>, int <a class="el" href="structAtomInfo.html#a8b1cbc353b0a176c2dab119e2b647d0a">atomic_number</a>)</td></tr>
+<tr class="memdesc:afd0f32280c8981828662484c22eace39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="structAtomInfo.html" title="Structure for storing atomic information. ">AtomInfo</a>.  <a href="#afd0f32280c8981828662484c22eace39">More...</a><br /></td></tr>
+<tr class="separator:afd0f32280c8981828662484c22eace39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -109,6 +109,10 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
 real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAtomInfo.html#a6cfe07e180bcab615c20080d53ded66a">atomic_radius</a></td></tr>
 <tr class="memdesc:a6cfe07e180bcab615c20080d53ded66a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atomic radius of the element. <br /></td></tr>
 <tr class="separator:a6cfe07e180bcab615c20080d53ded66a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b1cbc353b0a176c2dab119e2b647d0a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b1cbc353b0a176c2dab119e2b647d0a"></a>
+real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAtomInfo.html#a8b1cbc353b0a176c2dab119e2b647d0a">atomic_number</a></td></tr>
+<tr class="memdesc:a8b1cbc353b0a176c2dab119e2b647d0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atomic number of the element. <br /></td></tr>
+<tr class="separator:a8b1cbc353b0a176c2dab119e2b647d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af67e03658b15091ffe7587a1d6edbb55"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af67e03658b15091ffe7587a1d6edbb55"></a>
 pen&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structAtomInfo.html#af67e03658b15091ffe7587a1d6edbb55">color</a></td></tr>
 <tr class="memdesc:af67e03658b15091ffe7587a1d6edbb55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Style of the atom (color, etc...) <br /></td></tr>
@@ -118,7 +122,7 @@ pen&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
 <div class="textblock"><p>Structure for storing atomic information. </p>
 <p>This structure should be used to store all relevant information related to an atomic symbol. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a18c047b52b7d58f5a1f6299abb8e271c"></a>
+<a class="anchor" id="afd0f32280c8981828662484c22eace39"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -141,7 +145,13 @@ pen&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>color</em>&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>atomic_number</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -162,6 +172,7 @@ pen&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
     <tr><td class="paramname">element</td><td>Atomic symbol, C, N, etc... </td></tr>
     <tr><td class="paramname">atomic_radius</td><td>Atomic radius of the Element in Angstrom </td></tr>
     <tr><td class="paramname">color</td><td>Color in html notation (e.g. #ffffff) </td></tr>
+    <tr><td class="paramname">atomic_number</td><td>Atomic number </td></tr>
   </table>
   </dd>
 </dl>
@@ -174,7 +185,7 @@ pen&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struc
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 9 2016 10:07:00 for Asy-Atoms by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 10 2016 14:08:34 for Asy-Atoms by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

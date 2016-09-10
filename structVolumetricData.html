@@ -89,12 +89,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">VolumetricData Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Collaboration diagram for VolumetricData:</div>
+<div class="dyncontent">
+<div class="center"><img src="structVolumetricData__coll__graph.png" border="0" usemap="#VolumetricData_coll__map" alt="Collaboration graph"/></div>
+<map name="VolumetricData_coll__map" id="VolumetricData_coll__map">
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa5e59e0d52218f94d14e59cbd24ffc01"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa5e59e0d52218f94d14e59cbd24ffc01"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>operator init</b> (real[][] data)</td></tr>
-<tr class="separator:aa5e59e0d52218f94d14e59cbd24ffc01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3404c4444d5cc38f9348399e8a83814"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVolumetricData.html#af3404c4444d5cc38f9348399e8a83814">operator init</a> (real[][] data, int nx, int ny, int nz, <a class="el" href="structBasis.html">Basis</a> basis)</td></tr>
+<tr class="memdesc:af3404c4444d5cc38f9348399e8a83814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="structVolumetric.html" title="General structure to store and draw volumetric data. ">Volumetric</a> data.  <a href="#af3404c4444d5cc38f9348399e8a83814">More...</a><br /></td></tr>
+<tr class="separator:af3404c4444d5cc38f9348399e8a83814"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0d8d7b019c93109b541120ddf4a110a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad0d8d7b019c93109b541120ddf4a110a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>draw</b> (real isovalue=1)</td></tr>
 <tr class="separator:ad0d8d7b019c93109b541120ddf4a110a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -104,14 +111,91 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a3399d0e111f58fdca68a53d6d46a0073"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3399d0e111f58fdca68a53d6d46a0073"></a>
 real[][]&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
 <tr class="separator:a3399d0e111f58fdca68a53d6d46a0073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaac46eeba75f228e41a167210afbe520"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaac46eeba75f228e41a167210afbe520"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>nx</b></td></tr>
+<tr class="separator:aaac46eeba75f228e41a167210afbe520"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa79b5bc7ee2de01bb1e0a90023e2d94f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa79b5bc7ee2de01bb1e0a90023e2d94f"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>ny</b></td></tr>
+<tr class="separator:aa79b5bc7ee2de01bb1e0a90023e2d94f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8347f24d9281a4f992efaff8e4f67c58"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8347f24d9281a4f992efaff8e4f67c58"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>nz</b></td></tr>
+<tr class="separator:a8347f24d9281a4f992efaff8e4f67c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b9eaf5cc61f706d6f1907abd8f12438"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6b9eaf5cc61f706d6f1907abd8f12438"></a>
+<a class="el" href="structBasis.html">Basis</a>&#160;</td><td class="memItemRight" valign="bottom"><b>basis</b></td></tr>
+<tr class="separator:a6b9eaf5cc61f706d6f1907abd8f12438"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="af3404c4444d5cc38f9348399e8a83814"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void VolumetricData::operator init </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>data</em>[][], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ny</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structBasis.html">Basis</a>&#160;</td>
+          <td class="paramname"><em>basis</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor for <a class="el" href="structVolumetric.html" title="General structure to store and draw volumetric data. ">Volumetric</a> data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td><a class="el" href="structVolumetric.html" title="General structure to store and draw volumetric data. ">Volumetric</a> data in Cube file format </td></tr>
+    <tr><td class="paramname">basis</td><td>Base type structure for rendering correctly the voxels </td></tr>
+    <tr><td class="paramname">nx</td><td>How many points in x-direction </td></tr>
+    <tr><td class="paramname">ny</td><td>How many points in y-direction </td></tr>
+    <tr><td class="paramname">nz</td><td>How many points in z-direction </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/atoms.asy</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 9 2016 10:07:00 for Asy-Atoms by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Sep 10 2016 14:08:34 for Asy-Atoms by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
