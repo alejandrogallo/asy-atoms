@@ -13,5 +13,9 @@ cd ${TESTS_DIR}
 for test in test_*; do
   header TEST: ${test}
   echo
-  asy $test && success "Success" || error "Failed";
+  if [[ ${test} =~ .asy ]]; then
+    asy $test && success "Success" || error "Failed";
+  else
+    ./$test && success "Success" || error "Failed";
+  fi
 done
