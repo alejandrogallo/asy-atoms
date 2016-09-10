@@ -135,13 +135,14 @@ struct Atom {
 
 struct Voxel {
   real value;
+  pen color = red;
   triple coordinates;
   Basis basis;
   real lx,ly,lz;
   void setBasis ( Basis b ){ basis = b; };
   void setCoordinates ( triple coords ){ coordinates = coords; };
   triple getCartesian(){ return basis.getCartesian(coordinates); };
-  void draw(pen color) {
+  void draw() {
     surface[] voxelSurface; 
     path3[]   voxelLayout;
     triple origin,a,b,c;
@@ -156,11 +157,7 @@ struct Voxel {
                   -- origin + vbasis.getCartesian((1,1,0))
                   -- origin + vbasis.getCartesian((0,1,0))
                   -- cycle;
-    voxelLayout[1] = origin + vbasis.getCartesian((0,0,0))
-                  -- origin + vbasis.getCartesian((1,0,0))
-                  -- origin + vbasis.getCartesian((1,1,0))
-                  -- origin + vbasis.getCartesian((0,1,0))
-                  -- cycle;
+    draw(surface(voxelLayout[0]), color);
   };
   /**
    * \brief Constructor of a voxel element
