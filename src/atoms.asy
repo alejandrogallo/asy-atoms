@@ -4,6 +4,28 @@ import version;
 include db;
 
 /**
+  \brief A nice light for viewing atoms
+
+  It is basically modified from the White light
+  defined in three_light.asy.
+
+ */
+light AtomLight=light(
+  new pen[] {
+    rgb(0.38,0.38,0.45),
+    rgb(0.6,0.6,0.67),
+    rgb(0.5,0.5,0.57)
+  },
+  specularfactor=3,
+  new triple[] {
+    (-2,-1.5,-0.5),
+    (2,1.1,-2.5),
+    (-0.5,0,2)
+  },
+  viewport=true
+);
+
+/**
 \struct Basis
 \brief Vector basis object
 
@@ -11,7 +33,6 @@ This structure is used to define a Basis from 3 vectors. These
 vectors needn't be orthogonal.
 
  */
-
 struct Basis {
   triple a; ///< Vector 1
   triple b; ///< Vector 2
@@ -64,7 +85,6 @@ Basis CARTESIAN = Basis((1,0,0), (0,1,0), (0,0,1));
  * \struct Atom
  * \brief Structure with the atomic information needed to render an atom.
  */
-
 struct Atom {
   triple   coordinates;
   real     radius;
@@ -122,8 +142,25 @@ struct Voxel {
   void setCoordinates ( triple coords ){ coordinates = coords; };
   triple getCartesian(){ return basis.getCartesian(coordinates); };
   void draw(pen color) {
-    surface voxelSurface; 
-    voxelSurface = shift(getCartesian())*unitcube;
+    surface[] voxelSurface; 
+    path3[]   voxelLayout;
+    triple origin,a,b,c;
+    Basis     vbasis; //Voxel basis
+    origin = getCartesian();
+    a = lx*dir(basis.a);
+    b = ly*dir(basis.b);
+    c = lz*dir(basis.c);
+    vbasis = Basis(a,b,c);
+    voxelLayout[0] = origin + vbasis.getCartesian((0,0,0))
+                  -- origin + vbasis.getCartesian((1,0,0))
+                  -- origin + vbasis.getCartesian((1,1,0))
+                  -- origin + vbasis.getCartesian((0,1,0))
+                  -- cycle;
+    voxelLayout[1] = origin + vbasis.getCartesian((0,0,0))
+                  -- origin + vbasis.getCartesian((1,0,0))
+                  -- origin + vbasis.getCartesian((1,1,0))
+                  -- origin + vbasis.getCartesian((0,1,0))
+                  -- cycle;
   };
   /**
    * \brief Constructor of a voxel element

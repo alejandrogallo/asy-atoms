@@ -611,7 +611,6 @@ This structure is used to define a Basis from 3 vectors. These
 vectors needn't be orthogonal.
 
  */
-
 struct Basis {
   triple a; ///< Vector 1
   triple b; ///< Vector 2
@@ -664,7 +663,6 @@ Basis CARTESIAN = Basis((1,0,0), (0,1,0), (0,0,1));
  * \struct Atom
  * \brief Structure with the atomic information needed to render an atom.
  */
-
 struct Atom {
   triple   coordinates;
   real     radius;
@@ -722,8 +720,18 @@ struct Voxel {
   void setCoordinates ( triple coords ){ coordinates = coords; };
   triple getCartesian(){ return basis.getCartesian(coordinates); };
   void draw(pen color) {
-    surface voxelSurface; 
-    voxelSurface = shift(getCartesian())*unitcube;
+    surface[] voxelSurface; 
+    path3[]   voxelLayout;
+    triple origin,a,b,c;
+    Basis     vbasis; //Voxel basis
+    origin = getCartesian();
+    a = lx*dir(basis.a);
+    b = ly*dir(basis.b);
+    c = lz*dir(basis.c);
+    vbasis = Basis(a,b,c);
+    //voxelLayout[0] = origin
+                  //-- origin +
+
   };
   /**
    * \brief Constructor of a voxel element
