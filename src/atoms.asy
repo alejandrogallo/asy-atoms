@@ -60,10 +60,6 @@ struct Basis {
 
 Basis CARTESIAN = Basis((1,0,0), (0,1,0), (0,0,1));
 
-real distance ( triple a, triple b ){
-  return sqrt( (a.x-b.x)^2 + (a.y-b.y)^2 + (a.z-b.z)^2 );
-};
-
 /**
  * \struct Atom
  * \brief Structure with the atomic information needed to render an atom.
@@ -196,13 +192,13 @@ struct Bond {
     this.a2 = atom_2;
   };
   void draw (real max_dist = 100000 , real min_dist = 0, real radius=.15, light l = currentlight){
-    real dist = distance( a1.getCartesian(), a2.getCartesian());
+    real dist = length( a1.getCartesian()- a2.getCartesian());
     triple direction = a1.getCartesian() - a2.getCartesian();
     real height;
     triple midway;
     if ( min_dist <= dist  && dist <= max_dist ) {
       midway = direction/2 + a2.getCartesian();
-      height = distance( a1.getCartesian(), midway);
+      height = length( a1.getCartesian() - midway);
       draw(midway -- a2.getCartesian(), a2.color+linewidth(radius),l);
       draw(midway -- a1.getCartesian(), a1.color+linewidth(radius),l);
     }
