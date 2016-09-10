@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['general',['General',['../structGeneral.html',1,'']]]
+  ['volumetricdata',['VolumetricData',['../structVolumetricData.html',1,'']]],
+  ['voxel',['Voxel',['../structVoxel.html',1,'']]]
 ];
