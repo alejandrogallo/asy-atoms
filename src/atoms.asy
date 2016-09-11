@@ -189,7 +189,37 @@ struct Voxel {
                   -- origin + vbasis.getCartesian((1,1,0))
                   -- origin + vbasis.getCartesian((0,1,0))
                   -- cycle;
+    voxelLayout[1] = origin + vbasis.getCartesian((0,0,0))
+                  -- origin + vbasis.getCartesian((0,1,0))
+                  -- origin + vbasis.getCartesian((0,1,1))
+                  -- origin + vbasis.getCartesian((0,0,1))
+                  -- cycle;
+    voxelLayout[2] = origin + vbasis.getCartesian((1,0,0))
+                  -- origin + vbasis.getCartesian((1,1,0))
+                  -- origin + vbasis.getCartesian((1,1,1))
+                  -- origin + vbasis.getCartesian((1,0,1))
+                  -- cycle;
+    voxelLayout[3] = origin + vbasis.getCartesian((0,0,0))
+                  -- origin + vbasis.getCartesian((1,0,0))
+                  -- origin + vbasis.getCartesian((1,0,1))
+                  -- origin + vbasis.getCartesian((0,0,1))
+                  -- cycle;
+    voxelLayout[4] = origin + vbasis.getCartesian((0,1,0))
+                  -- origin + vbasis.getCartesian((1,1,0))
+                  -- origin + vbasis.getCartesian((1,1,1))
+                  -- origin + vbasis.getCartesian((0,1,1))
+                  -- cycle;
+    voxelLayout[5] = origin + vbasis.getCartesian((0,0,1))
+                  -- origin + vbasis.getCartesian((1,0,1))
+                  -- origin + vbasis.getCartesian((1,1,1))
+                  -- origin + vbasis.getCartesian((0,1,1))
+                  -- cycle;
     draw(surface(voxelLayout[0]), color);
+    draw(surface(voxelLayout[1]), color);
+    draw(surface(voxelLayout[2]), color);
+    draw(surface(voxelLayout[3]), color);
+    draw(surface(voxelLayout[4]), color);
+    draw(surface(voxelLayout[5]), color);
   };
   /**
    * \brief Constructor of a voxel element

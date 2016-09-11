@@ -10,14 +10,15 @@ unitsize(1cm);
 triple vector;
 Voxel V;
 real l = 1.23;
+currentlight=AtomLight;
 
+CARTESIAN.origin = - CARTESIAN.getCartesian((.1,.1,.1));
 CARTESIAN.draw();
 
 write("Testing orthogonal basis...");
 //////////////////////////////////////////////
 
-V = Voxel(1, (1,1,1), l=l);
-dot(Label("$V_1$"), (1,1,1));
+V = Voxel(1, (0,0,0), l=l);
 
 V.draw();
 
@@ -44,10 +45,12 @@ assert(V.lz == 3*l, "lz failed");
 write("Testing non-orthogonal basis");
 //////////////////////////////////////////////
 
+triple origin = (0,0,3);
+
 Basis NonOrthogonal = Basis((1,0,2),(.2,1,3),(-1,-1,-1));
 
-NonOrthogonal.origin = (1,1,1);
-V = Voxel(1, (.1,.1,.1), NonOrthogonal, lx=1*l, ly=2*l, lz=3*l);
+NonOrthogonal.origin = origin - NonOrthogonal.getCartesian((.1,.1,.1));
+V = Voxel(1, NonOrthogonal.getCoordinates(origin), NonOrthogonal, lx=1*l, ly=2*l, lz=3*l);
 
 V.draw();
 
@@ -55,5 +58,5 @@ NonOrthogonal.draw();
 
 
 
-//vim-run: asy -V %
+//vim-run: make dist ; cd $(dirname %); asy -V $(basename %) &
 //vim-run: asy -f pdf %
