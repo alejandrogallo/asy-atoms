@@ -11,6 +11,9 @@ TESTS_DIR=tests
 cd ${TESTS_DIR}
 
 for test in test_*; do
+  if [[ ${test} =~ .pdf|.eps ]]; then
+    continue
+  fi
   header TEST: ${test}
   echo
   if [[ ${test} =~ .asy ]]; then
