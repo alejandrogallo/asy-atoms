@@ -97,6 +97,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Public Member Functions</h2></td></tr>
 <tr class="memitem:acf3db108dcecab44102a4c54556ac907"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBasis.html#acf3db108dcecab44102a4c54556ac907">operator init</a> (triple <a class="el" href="structBasis.html#aa1859f20d91a29f29752197c97144102">a</a>, triple <a class="el" href="structBasis.html#aa336343187b6cf4745a78b1dc2992e32">b</a>, triple <a class="el" href="structBasis.html#a190e40eadc3a8c8cefd18bdd28c229c0">c</a>)</td></tr>
 <tr class="separator:acf3db108dcecab44102a4c54556ac907"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a90d69e1bd6a67707b4b309b53c68db"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1a90d69e1bd6a67707b4b309b53c68db"></a>
+real[][]&#160;</td><td class="memItemRight" valign="bottom"><b>getMatrix</b> ()</td></tr>
+<tr class="separator:a1a90d69e1bd6a67707b4b309b53c68db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1c73215bb76892befc22ff05e4b880b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBasis.html#ae1c73215bb76892befc22ff05e4b880b">isComplete</a> ()</td></tr>
+<tr class="separator:ae1c73215bb76892befc22ff05e4b880b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54f79327fd3489ff823944bf7d1a211b"><td class="memItemLeft" align="right" valign="top">triple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBasis.html#a54f79327fd3489ff823944bf7d1a211b">getCoordinates</a> (triple coordinates)</td></tr>
+<tr class="separator:a54f79327fd3489ff823944bf7d1a211b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36f15c6bc34d20bf009e43ed42337956"><td class="memItemLeft" align="right" valign="top">triple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBasis.html#a36f15c6bc34d20bf009e43ed42337956">getCartesian</a> (triple coordinates)</td></tr>
 <tr class="separator:a36f15c6bc34d20bf009e43ed42337956"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f2bbaffbc42c2199a38f67eaa1b4f13"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0f2bbaffbc42c2199a38f67eaa1b4f13"></a>
@@ -160,12 +167,67 @@ triple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get usual cartesian coordinates from a vector. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Get usual cartesian coordinates from a vector in the basis coordinates. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">coordinates</td><td>Generic vector expressed in the coordinates of the basis. </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="a54f79327fd3489ff823944bf7d1a211b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">triple Basis::getCoordinates </td>
+          <td>(</td>
+          <td class="paramtype">triple&#160;</td>
+          <td class="paramname"><em>coordinates</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Get usual cartesian coordinates from a vector in the basis coordinates. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">coordinates</td><td>of a vector expressed in cartesian (canonical coordinates). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Coordinates of the vector expressed in the basis. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae1c73215bb76892befc22ff05e4b880b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Basis::isComplete </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns true if the basis spans $ R^3$. </p>
 
 </div>
 </div>
@@ -223,7 +285,7 @@ triple&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Sep 10 2016 18:17:56 for Asy-Atoms by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 11 2016 11:56:13 for Asy-Atoms by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
