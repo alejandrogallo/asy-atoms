@@ -67,5 +67,22 @@ assert((0,1,0) == round(NonOrthogonal.getCoordinates(NonOrthogonal.b)), "Inverse
 assert((0,0,1) == round(NonOrthogonal.getCoordinates(NonOrthogonal.c)), "Inverse not working for basis");
 assert(localCoords == round(newLocalCoord), "Inverse transformation not working");
 
+
+
+write("Testing non-orthogonal normalisation");
+///////////////////////////////////////////////////////
+
+NonOrthogonal.normalise();
+
+// We have to round here...
+assert( round(length(NonOrthogonal.a)) == 1, "Vector a is not normalised");
+assert( round(length(NonOrthogonal.b)) == 1, "Vector b is not normalised");
+assert( round(length(NonOrthogonal.c)) == 1, "Vector c is not normalised");
+
+
+
+
+
+
 //vim-run: make dist ; cd $(dirname %); asy $(basename %)
 //vim-run: asy -batchView %
