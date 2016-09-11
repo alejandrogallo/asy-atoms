@@ -20,6 +20,7 @@ write("Testing orthogonal basis...");
 
 V = Voxel(1, (0,0,0), l=l);
 
+V.color = lightblue;
 V.draw();
 
 
@@ -58,5 +59,5 @@ NonOrthogonal.draw();
 
 
 
-//vim-run: make dist ; cd $(dirname %); asy -V $(basename %) &
+//vim-run: make dist ; cd $(dirname %); asy -V $(basename %)
 //vim-run: asy -f pdf %
