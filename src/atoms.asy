@@ -52,13 +52,45 @@ struct Basis {
     this.b = b;
     this.c = c;
   };
+  real[][] getMatrix (){
+    real[][] matrix = {
+      {a.x, b.x, c.x},
+      {a.y, b.y, c.y},
+      {a.z, b.z, c.z}
+    };
+    return matrix;
+  };
   /**
-   * Get usual cartesian coordinates from a vector.
+   * Returns true if the basis spans $\mathbb R^3$.
+   */
+  bool isComplete (){ return determinant(getMatrix())!=0?true:false; };
+  /**
+   * Get usual cartesian coordinates from a vector
+   * in the basis coordinates.
+   * @param coordinates of a vector expressed
+   *    in cartesian (canonical coordinates).
+   * @returns Coordinates of the vector expressed in the
+   *    basis.
+   */
+  triple getCoordinates(triple coordinates){
+    real[][] matrix = getMatrix();
+    real[] realCoords = {coordinates.x, coordinates.y, coordinates.z};
+    real[] result = inverse(matrix)*realCoords;
+    //write(matrix);
+    //write(inverse(matrix));
+    //write(matrix*inverse(matrix));
+    return (result[0], result[1], result[2]);
+  };
+  /**
+   * Get usual cartesian coordinates from a vector
+   * in the basis coordinates.
    * @param coordinates Generic vector expressed
    *    in the coordinates of the basis.
    */
   triple getCartesian(triple coordinates){
-    return coordinates.x*a + coordinates.y*b + coordinates.z*c;
+    real[] realCoords = {coordinates.x, coordinates.y, coordinates.z};
+    real[] result = getMatrix()*realCoords;
+    return (result[0], result[1], result[2]);
   };
   /**
    * \brief Draw a "repere"

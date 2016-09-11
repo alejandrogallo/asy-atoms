@@ -16,6 +16,12 @@ clean:
 test: ## Run the tests
 	bash tools/test.sh
 
+tags:
+	ctags -R \
+		--language-force=C \
+		-f tags \
+		src/ /usr/share/asymptote/
+
 doc:
 	doxygen Doxyfile
 
