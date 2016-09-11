@@ -61,7 +61,7 @@ struct Basis {
     return matrix;
   };
   /**
-   * Returns true if the basis spans \f$\mathbb R^3\f$.
+   * Returns true if the basis spans \f$\mathbf R^3\f$.
    */
   bool isComplete (){ return determinant(getMatrix())!=0?true:false; };
   /**
