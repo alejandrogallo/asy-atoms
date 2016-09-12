@@ -79,6 +79,31 @@ struct Voxel {
   };
 };
 
+
+struct Vertex {
+  real value;
+  triple coords;
+  Basis basis;
+  Vertex next;
+};
+
+bool operator == (Vertex v1 , Vertex v2){
+  if ( v1.value == v2.value && v1.coords == v2.coords ) {
+    return true;
+  }
+  return false;
+};
+
+struct Mcube {
+  Vertex start;
+  void draw ( real isovalue ){
+    Vertex current, next;
+    int count=0, count_max;
+    current = start;
+    next    = start.next;
+  };
+};
+
 /**
  * \struct VolumetricData
  * \brief General structure to store and draw volumetric data
@@ -183,6 +208,23 @@ struct VolumetricData {
       index = 0;
     }
     return data[index];
+  };
+
+  void draw_marching ( real isovalue = this.isovalue ){
+    real[][][] values   = new real[nx][ny][nz];
+    int  pnx, pny, pnz, index=-1;
+    real xstep = lx/nx, ystep = ly/ny, zstep = lz/nz;
+    triple point;
+    for ( int k = 0; k < nz; k+=1 ) {
+      for ( int j = 0; j < ny; j+=1 ) {
+        for ( int i = 0; i < nx; i+=1 ) {
+          //write("Points["+string(index)+"]:   "+string(i)+"-"+string(j)+"-"+string(k));
+          index+=1;
+          point = basis.getCartesian((xstep*i,ystep*j,zstep*k) );
+          values[i][j][k] = data[index]-isovalue ;
+        }
+      }
+    }
   };
   real kernel (real x, real y, real z){
     return getValue(x,y,z) - isovalue;
