@@ -1,5 +1,6 @@
 import three;
 import version;
+import contour3;
 
 include db;
 
@@ -51,6 +52,17 @@ struct Basis {
     this.a = a;
     this.b = b;
     this.c = c;
+  };
+  /**
+   * Normalise the basis
+   *
+   * This function changes the basis vectors into unit vectors
+   * along the same direction
+   */
+  void normalise  (){
+    a = dir(a);
+    b = dir(b);
+    c = dir(c);
   };
   real[][] getMatrix (){
     real[][] matrix = {
@@ -251,10 +263,15 @@ struct Voxel {
  */
 struct VolumetricData {
   // data must be an array of [value, coordinates] values
-  real[][] data;
+  real[] data;
+  real     isovalue=1;
   int      nx;
   int      ny;
   int      nz;
+  real     lx;
+  real     ly;
+  real     lz;
+  pen      color = red;
   Basis    basis;
   /**
    * \brief Constructor for Volumetric data
@@ -265,15 +282,125 @@ struct VolumetricData {
    * @param ny            How many points in y-direction
    * @param nz            How many points in z-direction
    */
-  void operator init(real[][] data, int nx, int ny, int nz, Basis basis){
+  void operator init(real[] data, int nx, int ny, int nz, real lx, real ly, real lz, Basis basis){
     this.data  = data;
     this.nx    = nx;
     this.ny    = ny;
     this.nz    = nz;
+    this.lx    = lx;
+    this.ly    = ly;
+    this.lz    = lz;
     this.basis = basis;
+    this.basis.normalise(); //Normalise for security
   };
-  void draw (real isovalue=1){
-     // TODO
+  bool dimensionCheck (){ return data.length == nx*ny*nz ? true : false; };
+  void getEverythingReal ( real isovalue = this.isovalue){
+    real[][][] values   = new real[nx][ny][nz];
+    int  pnx, pny, pnz, index=-1;
+    real xstep = lx/nx, ystep = ly/ny, zstep = lz/nz;
+    triple point;
+    for ( int k = 0; k < nz; k+=1 ) {
+      for ( int j = 0; j < ny; j+=1 ) {
+        for ( int i = 0; i < nx; i+=1 ) {
+          //write("Points["+string(index)+"]:   "+string(i)+"-"+string(j)+"-"+string(k));
+          index+=1;
+          point = basis.getCartesian((xstep*i,ystep*j,zstep*k) );
+          values[i][j][k] = data[index]-isovalue ;
+        }
+      }
+    }
+    draw(surface(contour3(values, (0,0,0), (7,7,7))), red);
+  };
+  void getEverything ( real isovalue = this.isovalue){
+    triple[][][] points = new triple[nx][ny][nz];
+    real[][][] values   = new real[nx][ny][nz];
+    int  pnx, pny, pnz, index=-1;
+    real xstep = lx/nx, ystep = ly/ny, zstep = lz/nz;
+    for ( int k = 0; k < nz; k+=1 ) {
+      for ( int j = 0; j < ny; j+=1 ) {
+        for ( int i = 0; i < nx; i+=1 ) {
+          //write("Points["+string(index)+"]:   "+string(i)+"-"+string(j)+"-"+string(k));
+          index+=1;
+          points[i][j][k] = basis.getCartesian((xstep*i,ystep*j,zstep*k) );
+          values[i][j][k] = data[index]-isovalue ;
+        }
+      }
+    }
+    draw(surface(contour3(points, values)), red);
+    //for ( i = 0; i < nx*ny*nz; i=i+1 ) {
+      //pnx = (i)%(nx-1);
+      //pny = ( i-nx  ) % (ny-1);
+      //pnz = ( i-pnx-pny) % (nz-1);
+      //write("Points["+string(i)+"]:   "+string(pnx)+"-"+string(pny)+"-"+string(pnz));
+      //write(string(i)+"-"+string(pnx)+"="+string( i - pnx));
+      //write(pny);
+      //write(pnz);
+      //points[pnx][pny][pnz] = basis.getCartesian((xstep*pnx,ystep*pny,zstep*pnz) );
+      //values[pnx][pny][pnz] = data[i]-isovalue ;
+    //}
+    //draw(surface(contour3(points, values)), red);
+  };
+  real getValue ( real x, real y, real z ){
+    triple localcoords;
+    real xstep = lx/nx, ystep = ly/ny, zstep = lz/nz;
+    int  pnx, pny, pnz;
+    int index;
+    localcoords = basis.getCoordinates((x,y,z));
+    //localcoords = (x,y,z);
+    pnx = floor(localcoords.x/xstep);
+    pny = floor(localcoords.y/ystep);
+    pnz = floor(localcoords.z/zstep);
+    index =  pnx%(nx-1) + pny%(ny-1) + pnz%(nz-1) ;
+    index =  pnx*pny*pnz;
+    index =  (pnx)*(pny)*(pnz);
+    //write("Points:   "+string(pnx)+"-"+string(pny)+"-"+string(pnz));
+    //if ( pnx > nx || pny > ny || pnz > nz ) return 0;
+    //write(index);
+    if ( index == nx*ny*nz ) {
+      //write("OVerflow");
+      index = 0;
+    }
+    return data[index];
+  };
+  real kernel (real x, real y, real z){
+    return getValue(x,y,z) - isovalue;
+  };
+  void draw (real isovalue=this.isovalue, pen color = this.color){
+    this.isovalue = isovalue;
+    draw(
+        surface(
+          contour3(
+            kernel,
+            (0,0,0),
+            (1*lx,1*ly,1*lz),
+            10
+            )
+          ),
+        color,
+        render(merge=true)
+        );
+  };
+  void draw_voxel (real isovalue=this.isovalue, pen color = this.color){
+    Voxel V;
+    triple position;
+    real value;
+    real xstep = lx/nx, ystep = ly/ny, zstep = lz/nz;
+    int index = -1;
+    for ( int k = 0; k < nz; k+=1 ) {
+      for ( int j = 0; j < ny; j+=1 ) {
+        for ( int i = 0; i < nx; i+=1 ) {
+          index += 1;
+          value = data[index];
+          if ( value <= isovalue+0.01 && value >= isovalue - 0.01 ) {
+          //if ( value == isovalue ) {
+            V = Voxel(value, (i*xstep,j*ystep,k*zstep), basis, lx = xstep, ly = ystep, lz = zstep);
+            //write(value, j,j,k);
+            V.color = color+opacity(0.3);
+            V.draw();
+          }
+        }
+      }
+    }
   };
 };
 
@@ -300,3 +427,5 @@ struct Bond {
     }
   };
 }
+
+// vim:set et sw=2 ts=2:
