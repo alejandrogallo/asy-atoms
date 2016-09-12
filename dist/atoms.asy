@@ -780,6 +780,8 @@ struct Atom {
   };
 };
 
+
+
 struct Voxel {
   real value;
   pen color = red;
@@ -1030,5 +1032,35 @@ struct Bond {
     }
   };
 }
+
+/**
+ * \struct AtomCollection
+ * \brief Collection of atoms to treat them together
+ */
+struct AtomCollection {
+  Atom[] atoms;
+  AtomCollection add ( Atom atom ){
+    atoms.push(atom);
+    return this;
+  };
+  AtomCollection drawBond ( string element1, string element2, real bond_radius, real max_dist ){
+    for ( Atom atom : atoms ) {
+      if ( atom.element == element1 ) {
+        for ( Atom atom_other : atoms ) {
+          if ( atom_other.element == element2 ) {
+            Bond(atom, atom_other).draw(radius=bond_radius, max_dist=max_dist);
+          }
+        }
+      }
+    }
+  return this;
+  };
+};
+
+void write ( AtomCollection atoms ){
+  for ( Atom atom : atoms.atoms ) {
+    write(atom.element);
+  }
+};
 
 // vim:set et sw=2 ts=2:
