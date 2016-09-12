@@ -133,6 +133,7 @@ struct Atom {
   triple   coordinates;
   real     radius;
   string   element;
+  static  Atom [] ALL_ATOMS_LIST;
   Label    label_name;
   triple   label_position;
   pen      color;
@@ -159,6 +160,7 @@ struct Atom {
     }
     this.label_name = Label(element, E) ;
     this.label_position = getCartesian()+this.radius*dir(currentprojection.camera);
+    ALL_ATOMS_LIST.push(this);
   };
   Atom setColor ( pen c ){ color = c; return this; };
   Atom setRadius ( real r ){ radius = r; return this; };
@@ -452,6 +454,9 @@ struct AtomCollection {
     atoms.push(atom);
     return this;
   };
+  void operator init(Atom[] atoms){
+    this.atoms = atoms;
+  };
   AtomCollection drawAtom (string element="", real radius_scale=1, bool draw_label = false){
     for ( Atom atom : atoms ) {
       if ( atom.element == element || length(element) == 0 ) {
@@ -474,11 +479,20 @@ struct AtomCollection {
   };
 };
 
+AtomCollection ALL_ATOMS = AtomCollection(Atom.ALL_ATOMS_LIST);
 
 void write ( AtomCollection atoms ){
   for ( Atom atom : atoms.atoms ) {
     write(atom.element);
   }
+};
+
+int length ( AtomCollection atoms ){
+  int count = 0;
+  for ( Atom atom : atoms.atoms ) {
+    count = count+1;
+  }
+  return count;
 };
 
 // vim:set et sw=2 ts=2:
