@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Asy-Atoms: Main Page</title>
+<title>Asy-Atoms: AtomCollection Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -37,9 +37,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -58,7 +58,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-</div><!-- top -->
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+    </ul>
+  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -73,55 +79,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">Asy-Atoms Documentation</div>  </div>
+<div class="title">AtomCollection Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1>ASY-ATOMS</h1>
-<p>This package is a tool in order to render molecular structures in using the Asymptote program.</p>
-<h2>Installation</h2>
-<p>Take the files in the <code>dist</code> director and copy them in your project directory or if you want to install it system-wide just copy the files into</p>
-<h3>Linux</h3>
-<p><code>/usr/share/asymptote/</code></p>
-<h3>Windows</h3>
-<p>TODO</p>
-<h2>Quick start</h2>
-<div class="fragment"><div class="line"><span class="keyword">import</span> atoms;</div>
-<div class="line">unitsize(1cm);</div>
-<div class="line">currentprojection = perspective(1,1,1);</div>
-<div class="line">settings.prc       = <span class="keyword">false</span>;</div>
-<div class="line">settings.render    = 10; <span class="comment">//quality</span></div>
-<div class="line">settings.outformat = <span class="stringliteral">&quot;png&quot;</span>; <span class="comment">//output </span></div>
-<div class="line"></div>
-<div class="line">real bond_radius = 3.0;</div>
-<div class="line">real radius_scale = 0.2;</div>
-<div class="line"></div>
-<div class="line"><a class="code" href="structAtom.html">Atom</a> h_1 = <a class="code" href="structAtom.html">Atom</a>(<span class="stringliteral">&quot;H&quot;</span>, (-1,0,0));</div>
-<div class="line"><a class="code" href="structAtom.html">Atom</a> h_2 = <a class="code" href="structAtom.html">Atom</a>(<span class="stringliteral">&quot;H&quot;</span>, (1,0,0));</div>
-<div class="line"></div>
-<div class="line">h_1.color = red;</div>
-<div class="line">h_2.color = blue;</div>
-<div class="line"></div>
-<div class="line">h_1.<a class="code" href="structAtom.html#a06901a79fe03a5b2f93c52849b37ec7f">draw</a>(<span class="keyword">true</span>);</div>
-<div class="line">h_2.<a class="code" href="structAtom.html#a06901a79fe03a5b2f93c52849b37ec7f">draw</a>(<span class="keyword">true</span>);</div>
-<div class="line"></div>
-<div class="line"><a class="code" href="structBond.html">Bond</a>(h_1,h_2).draw(radius=bond_radius);</div>
-</div><!-- fragment --><p>And now you could do</p>
-<p><code>asy h2.asy</code> or if you want interactive <code>asy -batchView h2.asy</code></p>
-<div class="image">
-<img src="images/h2.png"  alt="H2"/>
-</div>
-<h2>Whish list</h2>
-<ul>
-<li>Well rendered labels for the atoms.</li>
-<li>Volumetric data.</li>
+
+<p>Collection of atoms to treat them together.  
+ <a href="structAtomCollection.html#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Collection of atoms to treat them together. </p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<li>src/atoms.asy</li>
 </ul>
-<h2>Example</h2>
-<div class="image">
-<img src="images/siv.png"  alt="SiV defect in diamond"/>
-</div>
- </div></div><!-- contents -->
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated on Mon Sep 12 2016 15:57:47 for Asy-Atoms by &#160;<a href="http://www.doxygen.org/index.html">
