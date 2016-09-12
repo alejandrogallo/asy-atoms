@@ -738,7 +738,7 @@ struct Atom {
   pen      color;
   Basis    basis;
   AtomInfo info;
-  void setBasis ( Basis b ){ basis = b; };
+  Atom setBasis ( Basis b ){ basis = b; return this; };
   triple getCartesian(){ return basis.getCartesian(coordinates); };
   /**
    * \brief Constructor of the Basis structure.
@@ -746,7 +746,7 @@ struct Atom {
    * @param coordinate Coordinate in respect to the basis "basis"
    * @param basis      Basis for the coordinates of the atom
    */
-  void operator init(string element, triple coordinates, Basis basis=CARTESIAN){
+   void operator init(string element, triple coordinates, Basis basis=CARTESIAN){
     this.coordinates = coordinates;
     this.basis       = basis;
     for ( AtomInfo info : ATOMS_INFO ) {
@@ -757,10 +757,18 @@ struct Atom {
         this.radius      = info.atomic_radius;
       }
     }
-      this.label_name = Label(element, E) ;
+    this.label_name = Label(element, E) ;
     this.label_position = getCartesian()+this.radius*dir(currentprojection.camera);
   };
-  void setLabelPosition ( triple pos ){ label_position = pos; };
+  Atom setColor ( pen c ){ color = c; return this; };
+  Atom setRadius ( real r ){ radius = r; return this; };
+  Atom scaleRadius ( real r ){ radius = r*radius; return this; };
+  Atom setLabel ( Label l ){ label_name = l; return this; };
+  Atom setLabelPosition ( triple pos ){ label_position = pos; return this; };
+  Atom resetLabelPosition (){
+    this.label_position = getCartesian()+this.radius*dir(currentprojection.camera);
+    return this;
+  };
   /**
    * \brief Draw the atom
    *
@@ -770,13 +778,14 @@ struct Atom {
    * @param radius_scale  Scaling factor for the radius
    * @param l             Light to be used in the scene for the Atom
    */
-  void draw (bool draw_label = false, real radius_scale=1.0, light l = currentlight){
+  Atom draw (bool draw_label = false, real radius_scale=1.0, light l = currentlight){
     draw(shift(getCartesian())*scale3(radius_scale*radius)*unitsphere, color, l);
     if ( draw_label ) {
       if ( (real) VERSION >= 2.21 ) {
         label(label_name, label_position);
       }
     }
+    return this;
   };
 };
 
@@ -1043,6 +1052,14 @@ struct AtomCollection {
     atoms.push(atom);
     return this;
   };
+  AtomCollection drawAtom (string element="", real radius_scale=1, bool draw_label = false){
+    for ( Atom atom : atoms ) {
+      if ( atom.element == element || length(element) == 0 ) {
+        atom.draw(radius_scale = radius_scale, draw_label = draw_label);
+      }
+    }
+    return this;
+  };
   AtomCollection drawBond ( string element1, string element2, real bond_radius, real max_dist ){
     for ( Atom atom : atoms ) {
       if ( atom.element == element1 ) {
@@ -1056,6 +1073,7 @@ struct AtomCollection {
   return this;
   };
 };
+
 
 void write ( AtomCollection atoms ){
   for ( Atom atom : atoms.atoms ) {
