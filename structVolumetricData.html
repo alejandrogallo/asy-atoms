@@ -102,18 +102,39 @@ Collaboration diagram for VolumetricData:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af3404c4444d5cc38f9348399e8a83814"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVolumetricData.html#af3404c4444d5cc38f9348399e8a83814">operator init</a> (real[][] data, int nx, int ny, int nz, <a class="el" href="structBasis.html">Basis</a> basis)</td></tr>
-<tr class="memdesc:af3404c4444d5cc38f9348399e8a83814"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for Volumetric data.  <a href="#af3404c4444d5cc38f9348399e8a83814">More...</a><br /></td></tr>
-<tr class="separator:af3404c4444d5cc38f9348399e8a83814"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0d8d7b019c93109b541120ddf4a110a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad0d8d7b019c93109b541120ddf4a110a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>draw</b> (real isovalue=1)</td></tr>
-<tr class="separator:ad0d8d7b019c93109b541120ddf4a110a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51b5c0b07830c1ce11adff7f53ee5760"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structVolumetricData.html#a51b5c0b07830c1ce11adff7f53ee5760">operator init</a> (real[] data, int nx, int ny, int nz, real lx, real ly, real lz, <a class="el" href="structBasis.html">Basis</a> basis)</td></tr>
+<tr class="memdesc:a51b5c0b07830c1ce11adff7f53ee5760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for Volumetric data.  <a href="#a51b5c0b07830c1ce11adff7f53ee5760">More...</a><br /></td></tr>
+<tr class="separator:a51b5c0b07830c1ce11adff7f53ee5760"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa86224aa6fe68b92b370d077f0c7758d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa86224aa6fe68b92b370d077f0c7758d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>dimensionCheck</b> ()</td></tr>
+<tr class="separator:aa86224aa6fe68b92b370d077f0c7758d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d7d66bfdf85006a0ee7319c7dc6ae5b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1d7d66bfdf85006a0ee7319c7dc6ae5b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>getEverythingReal</b> (real isovalue=this.isovalue)</td></tr>
+<tr class="separator:a1d7d66bfdf85006a0ee7319c7dc6ae5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a817dd7f69173b14abc2b11869bf5a11e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a817dd7f69173b14abc2b11869bf5a11e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>getEverything</b> (real isovalue=this.isovalue)</td></tr>
+<tr class="separator:a817dd7f69173b14abc2b11869bf5a11e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3d3c2b2662d75546c77d770c73481f3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae3d3c2b2662d75546c77d770c73481f3"></a>
+real&#160;</td><td class="memItemRight" valign="bottom"><b>getValue</b> (real x, real y, real z)</td></tr>
+<tr class="separator:ae3d3c2b2662d75546c77d770c73481f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c09b4e9891de55e69171c3f00678cf6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9c09b4e9891de55e69171c3f00678cf6"></a>
+real&#160;</td><td class="memItemRight" valign="bottom"><b>kernel</b> (real x, real y, real z)</td></tr>
+<tr class="separator:a9c09b4e9891de55e69171c3f00678cf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac79f7de174e04ca1d03fb5b9c0fb2ce6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac79f7de174e04ca1d03fb5b9c0fb2ce6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>draw</b> (real isovalue=this.isovalue, pen color=this.color)</td></tr>
+<tr class="separator:ac79f7de174e04ca1d03fb5b9c0fb2ce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a725a1e846c44d6a88e97a57a2cf929f2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a725a1e846c44d6a88e97a57a2cf929f2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>draw_voxel</b> (real isovalue=this.isovalue, pen color=this.color)</td></tr>
+<tr class="separator:a725a1e846c44d6a88e97a57a2cf929f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a3399d0e111f58fdca68a53d6d46a0073"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3399d0e111f58fdca68a53d6d46a0073"></a>
-real[][]&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
-<tr class="separator:a3399d0e111f58fdca68a53d6d46a0073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f7afcd50ce30ffabaecb97866a954e9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9f7afcd50ce30ffabaecb97866a954e9"></a>
+real[]&#160;</td><td class="memItemRight" valign="bottom"><b>data</b></td></tr>
+<tr class="separator:a9f7afcd50ce30ffabaecb97866a954e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20ca8e66c08380c821bde57871f6498e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a20ca8e66c08380c821bde57871f6498e"></a>
+real&#160;</td><td class="memItemRight" valign="bottom"><b>isovalue</b> =1</td></tr>
+<tr class="separator:a20ca8e66c08380c821bde57871f6498e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaac46eeba75f228e41a167210afbe520"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaac46eeba75f228e41a167210afbe520"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>nx</b></td></tr>
 <tr class="separator:aaac46eeba75f228e41a167210afbe520"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -123,6 +144,18 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>ny</b></td></tr>
 <tr class="memitem:a8347f24d9281a4f992efaff8e4f67c58"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8347f24d9281a4f992efaff8e4f67c58"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>nz</b></td></tr>
 <tr class="separator:a8347f24d9281a4f992efaff8e4f67c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb166831049557d2904d6a00b847d81b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adb166831049557d2904d6a00b847d81b"></a>
+real&#160;</td><td class="memItemRight" valign="bottom"><b>lx</b></td></tr>
+<tr class="separator:adb166831049557d2904d6a00b847d81b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa91b4f110e77483835e335e75590aa7f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa91b4f110e77483835e335e75590aa7f"></a>
+real&#160;</td><td class="memItemRight" valign="bottom"><b>ly</b></td></tr>
+<tr class="separator:aa91b4f110e77483835e335e75590aa7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13f2c41e8b9aca5bc2efa32396c78f62"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a13f2c41e8b9aca5bc2efa32396c78f62"></a>
+real&#160;</td><td class="memItemRight" valign="bottom"><b>lz</b></td></tr>
+<tr class="separator:a13f2c41e8b9aca5bc2efa32396c78f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa96122b8d0320de02ec550d117a0873a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa96122b8d0320de02ec550d117a0873a"></a>
+pen&#160;</td><td class="memItemRight" valign="bottom"><b>color</b> = red</td></tr>
+<tr class="separator:aa96122b8d0320de02ec550d117a0873a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b9eaf5cc61f706d6f1907abd8f12438"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6b9eaf5cc61f706d6f1907abd8f12438"></a>
 <a class="el" href="structBasis.html">Basis</a>&#160;</td><td class="memItemRight" valign="bottom"><b>basis</b></td></tr>
 <tr class="separator:a6b9eaf5cc61f706d6f1907abd8f12438"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,7 +163,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>nz</b></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>General structure to store and draw volumetric data. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="af3404c4444d5cc38f9348399e8a83814"></a>
+<a class="anchor" id="a51b5c0b07830c1ce11adff7f53ee5760"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -140,8 +173,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>nz</b></td></tr>
         <tr>
           <td class="memname">void VolumetricData::operator init </td>
           <td>(</td>
-          <td class="paramtype">real&#160;</td>
-          <td class="paramname"><em>data</em>[][], </td>
+          <td class="paramtype">real[]&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -160,6 +193,24 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>nz</b></td></tr>
           <td></td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>nz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>ly</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>lz</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -200,7 +251,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>nz</b></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 11 2016 11:59:34 for Asy-Atoms by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 12 2016 12:10:22 for Asy-Atoms by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
