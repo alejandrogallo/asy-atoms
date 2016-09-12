@@ -733,7 +733,8 @@ struct Atom {
   triple   coordinates;
   real     radius;
   string   element;
-  Label    label;
+  Label    label_name;
+  triple   label_position;
   pen      color;
   Basis    basis;
   AtomInfo info;
@@ -744,6 +745,7 @@ struct Atom {
    * @param element    Symbol for the Atom (e.g. C, N .. )
    * @param coordinate Coordinate in respect to the basis "basis"
    * @param basis      Basis for the coordinates of the atom
+   * @param label_name      Optional label for the atom
    */
   void operator init(string element, triple coordinates, Basis basis=CARTESIAN){
     this.coordinates = coordinates;
@@ -756,8 +758,10 @@ struct Atom {
         this.radius      = info.atomic_radius;
       }
     }
-    this.label = Label(element) ;
+      this.label_name = Label(element, E) ;
+    this.label_position = getCartesian()+this.radius*dir(currentprojection.camera);
   };
+  void setLabelPosition ( triple pos ){ label_position = pos; };
   /**
    * \brief Draw the atom
    *
@@ -771,7 +775,7 @@ struct Atom {
     draw(shift(getCartesian())*scale3(radius_scale*radius)*unitsphere, color, l);
     if ( draw_label ) {
       if ( (real) VERSION >= 2.21 ) {
-        draw(label, getCartesian()+radius*(1,0,0));
+        label(label_name, label_position);
       }
     }
   };
