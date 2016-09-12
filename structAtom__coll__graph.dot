@@ -7,4 +7,5 @@ digraph "Atom"
   Node2 [label="AtomInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structAtomInfo.html",tooltip="Structure for storing atomic information. "];
   Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" basis" ,fontname="Helvetica"];
   Node3 [label="Basis",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structBasis.html",tooltip="Vector basis object. "];
+  Node1 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" ALL_ATOMS_LIST" ,fontname="Helvetica"];
 }
