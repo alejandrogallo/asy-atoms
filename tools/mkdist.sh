@@ -7,7 +7,7 @@ function arrow()    { echo -e " \033[1;34m==>\033[0m  $@"; }
 
 DIST_FOLDER=dist
 SRC_FOLDER=src
-MAIN_FILE=${SRC_FOLDER}/atoms.asy
+MAIN_FILE=${SRC_FOLDER}/main.asy
 DIST_FILE=${DIST_FOLDER}/atoms.asy
 
 SED_TEMP_FILE=$(mktemp)

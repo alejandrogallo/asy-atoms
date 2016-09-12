@@ -626,13 +626,13 @@ light AtomLight=light(
   viewport=true
 );
 
+
 /**
 \struct Basis
 \brief Vector basis object
 
 This structure is used to define a Basis from 3 vectors. These
 vectors needn't be orthogonal.
-
  */
 struct Basis {
   triple a; ///< Vector 1
@@ -725,6 +725,7 @@ struct Basis {
 
 Basis CARTESIAN = Basis((1,0,0), (0,1,0), (0,0,1));
 
+
 /**
  * \struct Atom
  * \brief Structure with the atomic information needed to render an atom.
@@ -792,6 +793,83 @@ struct Atom {
 };
 
 
+/**
+ * \struct Bond
+ * \brief Structure with the bond information needed to render an atomic bond
+ */
+struct Bond {
+  Atom a1,a2;
+  void operator init(Atom atom_1, Atom atom_2){
+    this.a1 = atom_1;
+    this.a2 = atom_2;
+  };
+  void draw (real max_dist = 100000 , real min_dist = 0, real radius=.15, light l = currentlight){
+    real dist = length( a1.getCartesian()- a2.getCartesian());
+    triple direction = a1.getCartesian() - a2.getCartesian();
+    real height;
+    triple midway;
+    if ( min_dist <= dist  && dist <= max_dist ) {
+      midway = direction/2 + a2.getCartesian();
+      height = length( a1.getCartesian() - midway);
+      draw(midway -- a2.getCartesian(), a2.color+linewidth(radius),l);
+      draw(midway -- a1.getCartesian(), a1.color+linewidth(radius),l);
+    }
+  };
+}
+
+
+/**
+ * \struct AtomCollection
+ * \brief Collection of atoms to treat them together
+ */
+struct AtomCollection {
+  Atom[] atoms;
+  AtomCollection add ( Atom atom ){
+    atoms.push(atom);
+    return this;
+  };
+  void operator init(Atom[] atoms){
+    this.atoms = atoms;
+  };
+  AtomCollection drawAtom (string element="", real radius_scale=1, bool draw_label = false){
+    for ( Atom atom : atoms ) {
+      if ( atom.element == element || length(element) == 0 ) {
+        atom.draw(radius_scale = radius_scale, draw_label = draw_label);
+      }
+    }
+    return this;
+  };
+  AtomCollection drawBond ( string element1, string element2, real bond_radius, real max_dist ){
+    for ( Atom atom : atoms ) {
+      if ( atom.element == element1 ) {
+        for ( Atom atom_other : atoms ) {
+          if ( atom_other.element == element2 ) {
+            Bond(atom, atom_other).draw(radius=bond_radius, max_dist=max_dist);
+          }
+        }
+      }
+    }
+  return this;
+  };
+};
+
+AtomCollection ALL_ATOMS = AtomCollection(Atom.ALL_ATOMS_LIST);
+
+void write ( AtomCollection atoms ){
+  for ( Atom atom : atoms.atoms ) {
+    write(atom.element);
+  }
+};
+
+int length ( AtomCollection atoms ){
+  int count = 0;
+  for ( Atom atom : atoms.atoms ) {
+    count = count+1;
+  }
+  return count;
+};
+
+// vim:set et sw=2 ts=2:
 
 struct Voxel {
   real value;
@@ -1020,79 +1098,3 @@ struct VolumetricData {
   };
 };
 
-/**
- * \struct Bond
- * \brief Structure with the bond information needed to render an atomic bond
- */
-struct Bond {
-  Atom a1,a2;
-  void operator init(Atom atom_1, Atom atom_2){
-    this.a1 = atom_1;
-    this.a2 = atom_2;
-  };
-  void draw (real max_dist = 100000 , real min_dist = 0, real radius=.15, light l = currentlight){
-    real dist = length( a1.getCartesian()- a2.getCartesian());
-    triple direction = a1.getCartesian() - a2.getCartesian();
-    real height;
-    triple midway;
-    if ( min_dist <= dist  && dist <= max_dist ) {
-      midway = direction/2 + a2.getCartesian();
-      height = length( a1.getCartesian() - midway);
-      draw(midway -- a2.getCartesian(), a2.color+linewidth(radius),l);
-      draw(midway -- a1.getCartesian(), a1.color+linewidth(radius),l);
-    }
-  };
-}
-
-/**
- * \struct AtomCollection
- * \brief Collection of atoms to treat them together
- */
-struct AtomCollection {
-  Atom[] atoms;
-  AtomCollection add ( Atom atom ){
-    atoms.push(atom);
-    return this;
-  };
-  void operator init(Atom[] atoms){
-    this.atoms = atoms;
-  };
-  AtomCollection drawAtom (string element="", real radius_scale=1, bool draw_label = false){
-    for ( Atom atom : atoms ) {
-      if ( atom.element == element || length(element) == 0 ) {
-        atom.draw(radius_scale = radius_scale, draw_label = draw_label);
-      }
-    }
-    return this;
-  };
-  AtomCollection drawBond ( string element1, string element2, real bond_radius, real max_dist ){
-    for ( Atom atom : atoms ) {
-      if ( atom.element == element1 ) {
-        for ( Atom atom_other : atoms ) {
-          if ( atom_other.element == element2 ) {
-            Bond(atom, atom_other).draw(radius=bond_radius, max_dist=max_dist);
-          }
-        }
-      }
-    }
-  return this;
-  };
-};
-
-AtomCollection ALL_ATOMS = AtomCollection(Atom.ALL_ATOMS_LIST);
-
-void write ( AtomCollection atoms ){
-  for ( Atom atom : atoms.atoms ) {
-    write(atom.element);
-  }
-};
-
-int length ( AtomCollection atoms ){
-  int count = 0;
-  for ( Atom atom : atoms.atoms ) {
-    count = count+1;
-  }
-  return count;
-};
-
-// vim:set et sw=2 ts=2:
