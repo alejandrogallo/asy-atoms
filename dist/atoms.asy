@@ -745,7 +745,6 @@ struct Atom {
    * @param element    Symbol for the Atom (e.g. C, N .. )
    * @param coordinate Coordinate in respect to the basis "basis"
    * @param basis      Basis for the coordinates of the atom
-   * @param label_name      Optional label for the atom
    */
   void operator init(string element, triple coordinates, Basis basis=CARTESIAN){
     this.coordinates = coordinates;
