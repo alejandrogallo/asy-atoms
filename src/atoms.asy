@@ -5,10 +5,11 @@
  * \brief Structure with the atomic information needed to render an atom.
  */
 struct Atom {
+  int   id;
+  static  Atom [] ALL_ATOMS_LIST;
   triple   coordinates;
   real     radius;
   string   element;
-  static  Atom [] ALL_ATOMS_LIST;
   Label    label_name;
   triple   label_position;
   pen      color;
@@ -34,9 +35,10 @@ struct Atom {
         this.radius      = info.atomic_radius;
       }
     }
-    this.label_name = Label(element, E) ;
-    this.label_position = getCartesian()+this.radius*dir(currentprojection.camera);
+    id = ALL_ATOMS_LIST.length+1;
     ALL_ATOMS_LIST.push(this);
+    this.label_name = Label(element+"$_{"+(string)id+"}$", E) ;
+    this.label_position = getCartesian()+this.radius*dir(currentprojection.camera);
   };
   Atom setColor ( pen c ){ color = c; return this; };
   Atom setCoordinates ( triple c ){ coordinates = c; return this; };
@@ -109,10 +111,18 @@ struct AtomCollection {
   void operator init(Atom[] atoms){
     this.atoms = atoms;
   };
-  AtomCollection drawAtom (string element="", real radius_scale=1, bool draw_label = false){
+  AtomCollection drawAtom (string element="", real radius_scale=1, bool draw_label = false, Atom[] except = {}){
+    bool isDrawing;
     for ( Atom atom : atoms ) {
+      isDrawing = true;
       if ( atom.element == element || length(element) == 0 ) {
-        atom.draw(radius_scale = radius_scale, draw_label = draw_label);
+        for ( Atom exceptAtom : except ) {
+          if ( exceptAtom.id == atom.id ) {
+            isDrawing = false;
+          }
+        }
+        if ( isDrawing )
+          atom.draw(radius_scale = radius_scale, draw_label = draw_label);
       }
     }
     return this;
@@ -139,12 +149,16 @@ void write ( AtomCollection atoms ){
   }
 };
 
-int length ( AtomCollection atoms ){
+int length ( Atom[] atoms ){
   int count = 0;
-  for ( Atom atom : atoms.atoms ) {
+  for ( Atom atom : atoms ) {
     count = count+1;
   }
   return count;
+};
+
+int length ( AtomCollection collection ){
+  return length(collection.atoms);
 };
 
 // vim:set et sw=2 ts=2:

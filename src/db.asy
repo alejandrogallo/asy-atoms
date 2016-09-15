@@ -72,7 +72,7 @@ AtomInfo[] ATOMS_INFO = {
   AtomInfo(
     "C",
      0.67,
-     "#d3d3d3",
+     "#eed5b7",
      6
   ),
   AtomInfo(
