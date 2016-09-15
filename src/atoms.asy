@@ -16,6 +16,7 @@ struct Atom {
   AtomInfo info;
   triple getCartesian(){ return basis.getCartesian(coordinates); };
   Atom setBasis ( Basis b ){ basis = b; return this; };
+  Basis getBasis (){ return basis; };
   /**
    * \brief Constructor of the Basis structure.
    * @param element    Symbol for the Atom (e.g. C, N .. )
