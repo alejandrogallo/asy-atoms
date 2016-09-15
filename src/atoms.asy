@@ -40,7 +40,7 @@ struct Atom {
   Atom setColor ( pen c ){ color = c; return this; };
   Atom setCoordinates ( triple c ){ coordinates = c; return this; };
   triple getCoordinates ( ){ return coordinates; };
-  Atom setRadius ( real r ){ radius = r; return this; };
+  real getRadius (){ return radius ; };
   Atom scaleRadius ( real r ){ radius = r*radius; return this; };
   Atom setLabel ( Label l ){ label_name = l; return this; };
   Atom setLabelPosition ( triple pos ){ label_position = pos; return this; };
@@ -48,6 +48,7 @@ struct Atom {
     this.label_position = getCartesian()+this.radius*dir(currentprojection.camera);
     return this;
   };
+  Atom setRadius ( real r ){ radius = r; resetLabelPosition(); return this; };
   /**
    * \brief Draw the atom
    *
