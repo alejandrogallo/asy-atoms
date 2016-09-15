@@ -45,7 +45,7 @@ struct Atom {
   Atom setLabel ( Label l ){ label_name = l; return this; };
   Atom setLabelPosition ( triple pos ){ label_position = pos; return this; };
   Atom resetLabelPosition (){
-    this.label_position = getCartesian()+this.radius*dir(currentprojection.camera);
+    this.label_position = getCartesian()+1.3*this.radius*dir(currentprojection.camera);
     return this;
   };
   Atom setRadius ( real r ){ radius = r; resetLabelPosition(); return this; };
