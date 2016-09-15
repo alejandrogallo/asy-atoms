@@ -12,8 +12,10 @@
     <LI><OBJECT type="text/sitemap"><param name="Name" value="Atom"><param name="Local" value="structAtom.html"><param name="ImageNumber" value="1"></OBJECT>
       <UL>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="draw"><param name="Local" value="structAtom.html#a06901a79fe03a5b2f93c52849b37ec7f"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="getBasis"><param name="Local" value="structAtom.html#a27e0366222250fcc2c53551aaabc0128"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="getCartesian"><param name="Local" value="structAtom.html#a14bea39dc6cda7b8a8cb5fdd303b3ee1"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="getCoordinates"><param name="Local" value="structAtom.html#a70b418c921f36f66be251af292690797"><param name="ImageNumber" value="11"></OBJECT>
+      <LI><OBJECT type="text/sitemap"><param name="Name" value="getRadius"><param name="Local" value="structAtom.html#a5cf0c32b766bb1b058c296afb4aab54c"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="operator init"><param name="Local" value="structAtom.html#a879f9242b3da50efaad223a3c0de296b"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="resetLabelPosition"><param name="Local" value="structAtom.html#afd02894c6bc7009023f66005f590f8c3"><param name="ImageNumber" value="11"></OBJECT>
       <LI><OBJECT type="text/sitemap"><param name="Name" value="scaleRadius"><param name="Local" value="structAtom.html#aa8c874fb428bbbb987e6073319522068"><param name="ImageNumber" value="11"></OBJECT>

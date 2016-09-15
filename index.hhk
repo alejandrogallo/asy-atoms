@@ -17,8 +17,10 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#ac7c79b0602be748e32b85999feb4d650"><param name="Name" value="coordinates"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a06901a79fe03a5b2f93c52849b37ec7f"><param name="Name" value="draw"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a404a91d6b6e2d23196faeac0cad3dbe2"><param name="Name" value="element"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a27e0366222250fcc2c53551aaabc0128"><param name="Name" value="getBasis"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a14bea39dc6cda7b8a8cb5fdd303b3ee1"><param name="Name" value="getCartesian"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a70b418c921f36f66be251af292690797"><param name="Name" value="getCoordinates"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a5cf0c32b766bb1b058c296afb4aab54c"><param name="Name" value="getRadius"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a75e3224dcea33f35737f336163268526"><param name="Name" value="info"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a0a7b39ef9c2748e5fb129ba113f55c9d"><param name="Name" value="label_name"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a2981e381fdd1597c1bee636488f0a791"><param name="Name" value="label_position"></OBJECT>
@@ -113,6 +115,7 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a404a91d6b6e2d23196faeac0cad3dbe2"><param name="Name" value="Atom"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtomInfo.html#a4242fbe779be6f217b1be622176326a3"><param name="Name" value="AtomInfo"></OBJECT>
   </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a27e0366222250fcc2c53551aaabc0128"><param name="Name" value="getBasis"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a14bea39dc6cda7b8a8cb5fdd303b3ee1"><param name="Name" value="getCartesian"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a14bea39dc6cda7b8a8cb5fdd303b3ee1"><param name="Name" value="Atom"></OBJECT>
@@ -127,6 +130,7 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="structVolumetricData.html#a817dd7f69173b14abc2b11869bf5a11e"><param name="Name" value="getEverything"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="structVolumetricData.html#a1d7d66bfdf85006a0ee7319c7dc6ae5b"><param name="Name" value="getEverythingReal"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="structBasis.html#a1a90d69e1bd6a67707b4b309b53c68db"><param name="Name" value="getMatrix"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a5cf0c32b766bb1b058c296afb4aab54c"><param name="Name" value="getRadius"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="structVolumetricData.html#ae3d3c2b2662d75546c77d770c73481f3"><param name="Name" value="getValue"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a75e3224dcea33f35737f336163268526"><param name="Name" value="info"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="structBasis.html#ae1c73215bb76892befc22ff05e4b880b"><param name="Name" value="isComplete"></OBJECT>
