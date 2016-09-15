@@ -21,6 +21,7 @@
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a14bea39dc6cda7b8a8cb5fdd303b3ee1"><param name="Name" value="getCartesian"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a70b418c921f36f66be251af292690797"><param name="Name" value="getCoordinates"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a5cf0c32b766bb1b058c296afb4aab54c"><param name="Name" value="getRadius"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a586a25e9f8a7426c2b451930c538580f"><param name="Name" value="id"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a75e3224dcea33f35737f336163268526"><param name="Name" value="info"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a0a7b39ef9c2748e5fb129ba113f55c9d"><param name="Name" value="label_name"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a2981e381fdd1597c1bee636488f0a791"><param name="Name" value="label_position"></OBJECT>
@@ -132,6 +133,7 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="structBasis.html#a1a90d69e1bd6a67707b4b309b53c68db"><param name="Name" value="getMatrix"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a5cf0c32b766bb1b058c296afb4aab54c"><param name="Name" value="getRadius"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="structVolumetricData.html#ae3d3c2b2662d75546c77d770c73481f3"><param name="Name" value="getValue"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a586a25e9f8a7426c2b451930c538580f"><param name="Name" value="id"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a75e3224dcea33f35737f336163268526"><param name="Name" value="info"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="structBasis.html#ae1c73215bb76892befc22ff05e4b880b"><param name="Name" value="isComplete"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="structVolumetricData.html#a20ca8e66c08380c821bde57871f6498e"><param name="Name" value="isovalue"></OBJECT>
