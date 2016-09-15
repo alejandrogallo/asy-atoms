@@ -14,8 +14,8 @@ struct Atom {
   pen      color;
   Basis    basis;
   AtomInfo info;
-  Atom setBasis ( Basis b ){ basis = b; return this; };
   triple getCartesian(){ return basis.getCartesian(coordinates); };
+  Atom setBasis ( Basis b ){ basis = b; return this; };
   /**
    * \brief Constructor of the Basis structure.
    * @param element    Symbol for the Atom (e.g. C, N .. )
@@ -38,6 +38,8 @@ struct Atom {
     ALL_ATOMS_LIST.push(this);
   };
   Atom setColor ( pen c ){ color = c; return this; };
+  Atom setCoordinates ( triple c ){ coordinates = c; return this; };
+  triple getCoordinates ( ){ return coordinates; };
   Atom setRadius ( real r ){ radius = r; return this; };
   Atom scaleRadius ( real r ){ radius = r*radius; return this; };
   Atom setLabel ( Label l ){ label_name = l; return this; };

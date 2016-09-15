@@ -740,8 +740,8 @@ struct Atom {
   pen      color;
   Basis    basis;
   AtomInfo info;
-  Atom setBasis ( Basis b ){ basis = b; return this; };
   triple getCartesian(){ return basis.getCartesian(coordinates); };
+  Atom setBasis ( Basis b ){ basis = b; return this; };
   /**
    * \brief Constructor of the Basis structure.
    * @param element    Symbol for the Atom (e.g. C, N .. )
@@ -764,6 +764,8 @@ struct Atom {
     ALL_ATOMS_LIST.push(this);
   };
   Atom setColor ( pen c ){ color = c; return this; };
+  Atom setCoordinates ( triple c ){ coordinates = c; return this; };
+  triple getCoordinates ( ){ return coordinates; };
   Atom setRadius ( real r ){ radius = r; return this; };
   Atom scaleRadius ( real r ){ radius = r*radius; return this; };
   Atom setLabel ( Label l ){ label_name = l; return this; };
@@ -957,18 +959,23 @@ struct Vertex {
   triple coords;
   Basis basis;
   Vertex next;
-  bool operator == (Vertex v1 , Vertex v2){
-    if ( v1.value == v2.value && v1.coords == v2.coords ) {
-      return true;
-    }
-    return false;
-  };
-}
+};
+
+bool operator == (Vertex v1 , Vertex v2){
+  if ( v1.value == v2.value && v1.coords == v2.coords ) {
+    return true;
+  }
+  return false;
+};
+
 struct Mcube {
   Vertex start;
-  //triple [] getSurface ( real isovalue ){
-    //return {(0,0,0)};
-  //};
+  void draw ( real isovalue ){
+    Vertex current, next;
+    int count=0, count_max;
+    current = start;
+    next    = start.next;
+  };
 };
 
 /**
