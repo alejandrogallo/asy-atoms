@@ -18,6 +18,8 @@ structAtomCollection.html
 structAtomInfo.html
 structBasis.html
 structBond.html
+structMcube.html
+structVertex.html
 structVolumetricData.html
 structVoxel.html
 graph_legend.html
@@ -57,6 +59,8 @@ ftv2vertline.png
 ftv2splitbar.png
 structAtom__coll__graph.png
 structBond__coll__graph.png
+structMcube__coll__graph.png
+structVertex__coll__graph.png
 structVolumetricData__coll__graph.png
 structVoxel__coll__graph.png
 graph_legend.png

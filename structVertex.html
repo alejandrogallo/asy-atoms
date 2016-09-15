@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Asy-Atoms: Bond Struct Reference</title>
+<title>Asy-Atoms: Vertex Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -50,45 +50,36 @@
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">Bond Struct Reference</div>  </div>
+<div class="title">Vertex Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Structure with the bond information needed to render an atomic bond.  
- <a href="structBond.html#details">More...</a></p>
 <div class="dynheader">
-Collaboration diagram for Bond:</div>
+Collaboration diagram for Vertex:</div>
 <div class="dyncontent">
-<div class="center"><img src="structBond__coll__graph.png" border="0" usemap="#Bond_coll__map" alt="Collaboration graph"/></div>
-<map name="Bond_coll__map" id="Bond_coll__map">
+<div class="center"><img src="structVertex__coll__graph.png" border="0" usemap="#Vertex_coll__map" alt="Collaboration graph"/></div>
+<map name="Vertex_coll__map" id="Vertex_coll__map">
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a2e6abed7fc392702e90934c0a50b30bc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2e6abed7fc392702e90934c0a50b30bc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>operator init</b> (<a class="el" href="structAtom.html">Atom</a> atom_1, <a class="el" href="structAtom.html">Atom</a> atom_2)</td></tr>
-<tr class="separator:a2e6abed7fc392702e90934c0a50b30bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52c673749d302c4307463bccd1916001"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a52c673749d302c4307463bccd1916001"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>draw</b> (real max_dist=100000, real min_dist=0, real radius=.15, light l=currentlight)</td></tr>
-<tr class="separator:a52c673749d302c4307463bccd1916001"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:aa09372367188f9aad123f2c14b4e4759"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa09372367188f9aad123f2c14b4e4759"></a>
-<a class="el" href="structAtom.html">Atom</a>&#160;</td><td class="memItemRight" valign="bottom"><b>a1</b></td></tr>
-<tr class="separator:aa09372367188f9aad123f2c14b4e4759"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82e3c9785f79ddb5713e97b38756e884"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a82e3c9785f79ddb5713e97b38756e884"></a>
-<a class="el" href="structAtom.html">Atom</a>&#160;</td><td class="memItemRight" valign="bottom"><b>a2</b></td></tr>
-<tr class="separator:a82e3c9785f79ddb5713e97b38756e884"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a885e2ce65acb35f40a76668a77397978"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a885e2ce65acb35f40a76668a77397978"></a>
+real&#160;</td><td class="memItemRight" valign="bottom"><b>value</b></td></tr>
+<tr class="separator:a885e2ce65acb35f40a76668a77397978"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3377a32e7299754308823dbc44babb84"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3377a32e7299754308823dbc44babb84"></a>
+triple&#160;</td><td class="memItemRight" valign="bottom"><b>coords</b></td></tr>
+<tr class="separator:a3377a32e7299754308823dbc44babb84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22db07a31cd375218edc77d1281557df"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a22db07a31cd375218edc77d1281557df"></a>
+<a class="el" href="structBasis.html">Basis</a>&#160;</td><td class="memItemRight" valign="bottom"><b>basis</b></td></tr>
+<tr class="separator:a22db07a31cd375218edc77d1281557df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58cf7137ab0376bf6a44503d97a08b9c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a58cf7137ab0376bf6a44503d97a08b9c"></a>
+<a class="el" href="structVertex.html">Vertex</a>&#160;</td><td class="memItemRight" valign="bottom"><b>next</b></td></tr>
+<tr class="separator:a58cf7137ab0376bf6a44503d97a08b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Structure with the bond information needed to render an atomic bond. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/atoms.asy</li>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>src/volumetric.asy</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
