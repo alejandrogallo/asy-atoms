@@ -58,8 +58,7 @@ And now you could do
 
 ## Whish list ##
 
-  * Well rendered labels for the atoms.
-  * Volumetric data.
+  * Volumetric data!!!!!!!
 
 ## Example ##
 
