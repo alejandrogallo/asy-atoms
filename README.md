@@ -56,6 +56,23 @@ And now you could do
 ![H2](images/h2.png)
 
 
+## Citation ##
+
+If you find this project useful and want to cite it,
+consider adding this bibtex entry to your citations.
+
+~~~bibtex
+@misc{asyatoms,
+  author = {Alejandro Gallo},
+  title = {An asymptote package for rendering atomic structures},
+  year = {2016},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/alejandrogallo/asy-atoms}},
+}
+~~~
+
+
 ## Whish list ##
 
   * Volumetric data!!!!!!!
