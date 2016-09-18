@@ -80,7 +80,8 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structBond.html#aa09372367188f9aad123f2c14b4e4759"><param name="Name" value="a1"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structBond.html#a82e3c9785f79ddb5713e97b38756e884"><param name="Name" value="a2"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="structBond.html#a52c673749d302c4307463bccd1916001"><param name="Name" value="draw"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structBond.html#a6b898a1265284f5ef85858007d41e58d"><param name="Name" value="draw"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structBond.html#abb109d7dbd718aa314896f7d6d98ce71"><param name="Name" value="infinity"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structBond.html#a2e6abed7fc392702e90934c0a50b30bc"><param name="Name" value="operator init"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="structBasis.html#a190e40eadc3a8c8cefd18bdd28c229c0"><param name="Name" value="c"></OBJECT>
@@ -104,7 +105,7 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a06901a79fe03a5b2f93c52849b37ec7f"><param name="Name" value="Atom"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structBasis.html#a0f2bbaffbc42c2199a38f67eaa1b4f13"><param name="Name" value="Basis"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="structBond.html#a52c673749d302c4307463bccd1916001"><param name="Name" value="Bond"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="structBond.html#a6b898a1265284f5ef85858007d41e58d"><param name="Name" value="Bond"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structMcube.html#a98e449708271c5c63d5c35947e8b12ef"><param name="Name" value="Mcube"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structVolumetricData.html#ac79f7de174e04ca1d03fb5b9c0fb2ce6"><param name="Name" value="VolumetricData"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="structVoxel.html#a8a88ba3f3007996536cdfb2453a45c19"><param name="Name" value="Voxel"></OBJECT>
@@ -134,6 +135,7 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a5cf0c32b766bb1b058c296afb4aab54c"><param name="Name" value="getRadius"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="structVolumetricData.html#ae3d3c2b2662d75546c77d770c73481f3"><param name="Name" value="getValue"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a586a25e9f8a7426c2b451930c538580f"><param name="Name" value="id"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="structBond.html#abb109d7dbd718aa314896f7d6d98ce71"><param name="Name" value="infinity"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="structAtom.html#a75e3224dcea33f35737f336163268526"><param name="Name" value="info"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="structBasis.html#ae1c73215bb76892befc22ff05e4b880b"><param name="Name" value="isComplete"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="structVolumetricData.html#a20ca8e66c08380c821bde57871f6498e"><param name="Name" value="isovalue"></OBJECT>

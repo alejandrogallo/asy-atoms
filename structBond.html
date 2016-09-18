@@ -25,7 +25,7 @@
   <td style="padding-left: 0.5em;">
    <div id="projectname">Asy-Atoms
    </div>
-   <div id="projectbrief">An asymptote package for rendering atoms</div>
+   <div id="projectbrief">An asymptote package for rendering atomic structures</div>
   </td>
  </tr>
  </tbody>
@@ -69,12 +69,12 @@ Collaboration diagram for Bond:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2e6abed7fc392702e90934c0a50b30bc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2e6abed7fc392702e90934c0a50b30bc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>operator init</b> (<a class="el" href="structAtom.html">Atom</a> atom_1, <a class="el" href="structAtom.html">Atom</a> atom_2)</td></tr>
+<tr class="memitem:a2e6abed7fc392702e90934c0a50b30bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBond.html#a2e6abed7fc392702e90934c0a50b30bc">operator init</a> (<a class="el" href="structAtom.html">Atom</a> atom_1, <a class="el" href="structAtom.html">Atom</a> atom_2)</td></tr>
+<tr class="memdesc:a2e6abed7fc392702e90934c0a50b30bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor with atoms.  <a href="#a2e6abed7fc392702e90934c0a50b30bc">More...</a><br /></td></tr>
 <tr class="separator:a2e6abed7fc392702e90934c0a50b30bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52c673749d302c4307463bccd1916001"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a52c673749d302c4307463bccd1916001"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>draw</b> (real max_dist=100000, real min_dist=0, real radius=.15, light l=currentlight)</td></tr>
-<tr class="separator:a52c673749d302c4307463bccd1916001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b898a1265284f5ef85858007d41e58d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBond.html#a6b898a1265284f5ef85858007d41e58d">draw</a> (real max_dist=<a class="el" href="structBond.html#abb109d7dbd718aa314896f7d6d98ce71">infinity</a>, real min_dist=0, real radius=6, light l=currentlight)</td></tr>
+<tr class="memdesc:a6b898a1265284f5ef85858007d41e58d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the bond between atoms a1 and a2.  <a href="#a6b898a1265284f5ef85858007d41e58d">More...</a><br /></td></tr>
+<tr class="separator:a6b898a1265284f5ef85858007d41e58d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
@@ -82,18 +82,124 @@ Data Fields</h2></td></tr>
 <a class="el" href="structAtom.html">Atom</a>&#160;</td><td class="memItemRight" valign="bottom"><b>a1</b></td></tr>
 <tr class="separator:aa09372367188f9aad123f2c14b4e4759"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82e3c9785f79ddb5713e97b38756e884"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a82e3c9785f79ddb5713e97b38756e884"></a>
-<a class="el" href="structAtom.html">Atom</a>&#160;</td><td class="memItemRight" valign="bottom"><b>a2</b></td></tr>
+<a class="el" href="structAtom.html">Atom</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBond.html#a82e3c9785f79ddb5713e97b38756e884">a2</a></td></tr>
+<tr class="memdesc:a82e3c9785f79ddb5713e97b38756e884"><td class="mdescLeft">&#160;</td><td class="mdescRight">Atoms to draw a bond in between of. <br /></td></tr>
 <tr class="separator:a82e3c9785f79ddb5713e97b38756e884"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb109d7dbd718aa314896f7d6d98ce71"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abb109d7dbd718aa314896f7d6d98ce71"></a>
+real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structBond.html#abb109d7dbd718aa314896f7d6d98ce71">infinity</a> = 1000000000</td></tr>
+<tr class="memdesc:abb109d7dbd718aa314896f7d6d98ce71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum distance over which no bond can be drawn. <br /></td></tr>
+<tr class="separator:abb109d7dbd718aa314896f7d6d98ce71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Structure with the bond information needed to render an atomic bond. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a6b898a1265284f5ef85858007d41e58d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bond::draw </td>
+          <td>(</td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>max_dist</em> = <code><a class="el" href="structBond.html#abb109d7dbd718aa314896f7d6d98ce71">infinity</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>min_dist</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">real&#160;</td>
+          <td class="paramname"><em>radius</em> = <code>6</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">light&#160;</td>
+          <td class="paramname"><em>l</em> = <code>currentlight</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Draw the bond between atoms a1 and a2. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">max_dist</td><td>Draw if the distance between them is less than max_dist </td></tr>
+    <tr><td class="paramname">min_dist</td><td>Draw if the distance between them is greater than min_dist </td></tr>
+    <tr><td class="paramname">radius</td><td>Radius of the bond </td></tr>
+    <tr><td class="paramname">light</td><td>Custom light for the bond </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a2e6abed7fc392702e90934c0a50b30bc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bond::operator init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structAtom.html">Atom</a>&#160;</td>
+          <td class="paramname"><em>atom_1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structAtom.html">Atom</a>&#160;</td>
+          <td class="paramname"><em>atom_2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor with atoms. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">atom_1</td><td>First atom </td></tr>
+    <tr><td class="paramname">atom_2</td><td>Second atom </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/atoms.asy</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 16 2016 17:56:04 for Asy-Atoms by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Sep 18 2016 03:06:28 for Asy-Atoms by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
