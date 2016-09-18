@@ -127,7 +127,7 @@ struct AtomCollection {
     }
     return this;
   };
-  AtomCollection drawBond ( string element1, string element2, real bond_radius, real max_dist ){
+  AtomCollection drawBond ( string element1, string element2, real bond_radius=.15, real max_dist=1000 ){
     for ( Atom atom : atoms ) {
       if ( atom.element == element1 ) {
         for ( Atom atom_other : atoms ) {
