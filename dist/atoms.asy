@@ -805,15 +805,17 @@ struct Atom {
  */
 struct Bond {
   Atom a1,a2;
+  real infinity = 1000000000;
   void operator init(Atom atom_1, Atom atom_2){
     this.a1 = atom_1;
     this.a2 = atom_2;
   };
-  void draw (real max_dist = 100000 , real min_dist = 0, real radius=.15, light l = currentlight){
+  void draw (real max_dist = infinity , real min_dist = 0, real radius=6, light l = currentlight){
     real dist = length( a1.getCartesian()- a2.getCartesian());
     triple direction = a1.getCartesian() - a2.getCartesian();
     real height;
     triple midway;
+    if ( max_dist == infinity ) max_dist = dist;
     if ( min_dist <= dist  && dist <= max_dist ) {
       midway = direction/2 + a2.getCartesian();
       height = length( a1.getCartesian() - midway);

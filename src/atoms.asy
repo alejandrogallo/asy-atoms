@@ -78,16 +78,30 @@ struct Atom {
  * \brief Structure with the bond information needed to render an atomic bond
  */
 struct Bond {
-  Atom a1,a2;
+  Atom a1,a2; ///< Atoms to draw a bond in between of.
+  real infinity = 1000000000; ///< Maximum distance over which no bond can be drawn.
+  /**
+   * \brief Constructor with atoms
+   * @param atom_1     First atom
+   * @param atom_2     Second atom
+   */
   void operator init(Atom atom_1, Atom atom_2){
     this.a1 = atom_1;
     this.a2 = atom_2;
   };
-  void draw (real max_dist = 100000 , real min_dist = 0, real radius=.15, light l = currentlight){
+  /**
+   * \brief Draw the bond between atoms a1 and a2
+   * @param max_dist   Draw if the distance between them is less than max_dist
+   * @param min_dist   Draw if the distance between them is greater than min_dist
+   * @param radius     Radius of the bond
+   * @param light      Custom light for the bond
+   */
+  void draw (real max_dist = infinity , real min_dist = 0, real radius=6, light l = currentlight){
     real dist = length( a1.getCartesian()- a2.getCartesian());
     triple direction = a1.getCartesian() - a2.getCartesian();
     real height;
     triple midway;
+    if ( max_dist == infinity ) max_dist = dist;
     if ( min_dist <= dist  && dist <= max_dist ) {
       midway = direction/2 + a2.getCartesian();
       height = length( a1.getCartesian() - midway);
