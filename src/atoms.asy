@@ -64,9 +64,9 @@ struct Atom {
   Atom draw (bool draw_label = false, real radius_scale=1.0, light l = currentlight){
     draw(shift(getCartesian())*scale3(radius_scale*radius)*unitsphere, color, l);
     if ( draw_label ) {
-      if ( (real) VERSION >= 2.21 ) {
+      //if ( (real) VERSION >= 2.21 ) {
         label(label_name, label_position);
-      }
+      //}
     }
     return this;
   };
