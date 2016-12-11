@@ -1,4 +1,7 @@
 /// \mainpage
+
+[![Build Status](https://travis-ci.org/alejandrogallo/asy-atoms.svg?branch=master)](https://travis-ci.org/alejandrogallo/asy-atoms)
+
 # ASY-ATOMS #
 
 
